@@ -1,14 +1,20 @@
 <?php 
-require_once './database.php';
+require_once 'database.php';
 class MySQL extends Database {
-    protected $host = "localhost";
-    protected $username = "root";
-    protected $password = "";
-    protected $dbname = "Enrollment_System";
-    function __construct() {
-        parent::__construct($this->host,$this->username,$this->password,$this->dbname); 
+    protected $MySqlHost = "localhost";
+    protected $MySqlUsername ="root";
+    protected $MySqlPassword = "";
+    protected $MySqlDBName = "ggg";
+
+    public function __construct() {
+        parent::__construct($this->MySqlHost,$this->MySqlUsername,$this->MySqlPassword,$this->MySqlDBName); 
+    }
+    public function openMySqlConnection(){
+        $this->OpenConnection();
+    }
+    public function closeMySqlConnection(){
+       $this->CloseConnection();
     }
 }
 
-new MySQL(); 
 
