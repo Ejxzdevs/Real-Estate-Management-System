@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --bg-glass: #282A36;
+}
+
+* {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+* .navContainer {
+  background-color: var(--bg-glass);
+}
+* .navExpandContainer {
+  background-color: var(--bg-glass);
+}/*# sourceMappingURL=global.css.map */
