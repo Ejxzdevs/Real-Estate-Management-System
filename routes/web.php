@@ -1,7 +1,8 @@
 <?php
-// Define your routes in an associative array
+// Define your routes 
 return [
     'home' => 'home.php',
     'product' => 'product.php',
+    
 ];
 

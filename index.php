@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <?php require_once "app/view/components/nav.php"; ?>
+        <?php $page == "app/view/404.php" ? null : require_once "app/view/components/nav.php"; ?>
     </header>
     <main>
         <?php require_once $page; ?>
