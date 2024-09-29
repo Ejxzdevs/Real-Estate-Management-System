@@ -1,5 +1,5 @@
 <?php 
-include "../config/mysql.php";
+require_once "../config/mysql.php";
 
 class Create_Table_Account extends MySQL {
     private $table_name = "user_account";

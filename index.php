@@ -11,10 +11,13 @@
 </head>
 <body>
     <header>
-        <?php  include "app/view/components/nav.php"; ?>
+        <?php require_once "app/view/components/nav.php"; ?>
     </header>
+    <main>
+        <?php require_once $page; ?>
+    </main>
 
-    <?php include $page; ?>
+
      <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
