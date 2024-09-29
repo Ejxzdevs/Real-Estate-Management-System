@@ -1,7 +1,7 @@
 <?php 
 include "../config/mysql.php";
 
-class CreateTableAccountMigration extends MySQL {
+class Create_Table_Account extends MySQL {
     private $table_name = "user_account";
     private $username = "admin";
     private $password = "admin";
@@ -10,7 +10,6 @@ class CreateTableAccountMigration extends MySQL {
     public function __construct() {
         parent::__construct();
         try {
-
             $this->openMySqlConnection();
             // Create table if it doesn't exist
             $create_table_account = "CREATE TABLE IF NOT EXISTS $this->table_name (
@@ -40,7 +39,7 @@ class CreateTableAccountMigration extends MySQL {
             if (password_verify($this->password, $user['password'])) {
                 echo "Account exists.<br>";
             }
-            
+
         }else{
             // If user does not exist, create a new account
             $this->hashed_password = password_hash($this->password, PASSWORD_DEFAULT);
@@ -53,4 +52,4 @@ class CreateTableAccountMigration extends MySQL {
     }
 }
 
-new CreateTableAccountMigration();
+new Create_Table_Account();

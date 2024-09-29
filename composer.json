@@ -1,0 +1,15 @@
+{
+    "name": "ejhayy/real-estate-system",
+    "description": "A real estate management system for listing properties, managing clients, and handling transactions.",
+    "type": "project",
+    "require": {
+        "twbs/bootstrap": "dev-main"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "EjHay Gofredo"
+        }
+    ],
+    "minimum-stability": "dev"
+}
