@@ -51,5 +51,5 @@ class Create_Table_Account extends MySQL {
         }
     }
 }
-
+// comment this Create_Table_Account(); if don't want to create a user_account table 
 new Create_Table_Account();

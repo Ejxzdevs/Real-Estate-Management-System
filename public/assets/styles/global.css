@@ -20,9 +20,40 @@
 }
 * .btn-login {
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 * .homeContainer {
-  background-color: red;
+  height: auto;
+  overflow-x: hidden;
+}
+* .homeContainer .introContainer {
+  padding-top: 10rem;
+  height: 100vh;
+  background-image: url("./../../images/Backgrounds/Home_bg.jpg");
+  background-size: cover; /* Adjusts the size of the image to cover the entire div */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+}
+* .homeContainer .introContainer .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+* .homeContainer .introContainer .left label {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.6rem;
+}
+* .homeContainer .introContainer .left label .customHouse {
+  font-size: 4rem;
+  font-family: Arial, sans-serif;
+  font-weight: bolder;
+  background: linear-gradient(135deg, yellow 50%, white 50%);
+  -webkit-background-clip: text; /* Chrome and Safari */
+  background-clip: text; /* Standard syntax for background clip */
+  color: transparent; /* Make the text color transparent */
+}
+* .homeContainer .summaryContainer {
   height: 100vh;
 }/*# sourceMappingURL=global.css.map */

@@ -1,9 +1,14 @@
 <div class="homeContainer">
-    <div class="container">
-        <h1 class="mt-5">Hello, Bootstrap!</h1>
-        <p class="lead">This is a simple Bootstrap example using Composer.</p>
-        
-        <button type="button" class="btn btn-primary">Click Me!</button>
+    <div class="introContainer row ">
+        <div class="col-md-6 left">
+            <label>Find Your <br>Dream <br><span class="customHouse">House</span></lab>
+        </div>
+        <div class="col-md-6">
+            <h2>Column 2</h2>
+        </div>
     </div>
-    <h5>HOME HERE <?php if(isset($_GET['id'])) echo htmlspecialchars($_GET['id']); ?></h5>
+    <div class="summaryContainer">
+
+    </div>
+    
 </div>
