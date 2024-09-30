@@ -15,11 +15,21 @@
   
     & .navContainer {
         background-color: var(--bg-glass);
+
     }
 
     & .navExpandContainer{
         background-color: var(--bg-glass);
     }
+
+    
+    & .btn-login{
+        font-weight: bold;
+        letter-spacing: 2px;
+        
+    }
+
+   
 
 
 }
