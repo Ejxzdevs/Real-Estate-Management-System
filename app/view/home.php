@@ -1,4 +1,4 @@
-<div>
+<div class="homeContainer">
     <div class="container">
         <h1 class="mt-5">Hello, Bootstrap!</h1>
         <p class="lead">This is a simple Bootstrap example using Composer.</p>

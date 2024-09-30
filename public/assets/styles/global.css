@@ -21,4 +21,8 @@
 * .btn-login {
   font-weight: bold;
   letter-spacing: 2px;
+}
+* .homeContainer {
+  background-color: red;
+  height: 100vh;
 }/*# sourceMappingURL=global.css.map */

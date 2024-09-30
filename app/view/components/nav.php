@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navExpandContainer collapse navbar-collapse" id="navbarNav">
-            <ul class="w-100 ps-3 pt-3 pb-3 navbar-nav gap-2 gap-lg-3 d-flex flex-column flex-lg-row justify-content-center align-items-start justify-content-lg-center align-items-lg-center"> <!-- Added d-flex and gap-5 -->
+            <ul class="w-100 ps-3 pt-2 pb-3 navbar-nav gap-2 gap-lg-3 d-flex flex-column flex-lg-row justify-content-center align-items-start justify-content-lg-center align-items-lg-center"> <!-- Added d-flex and gap-5 -->
                 <li class="nav-item">
                     <a class="nav-link text-light active" aria-current="page" href="#">Home</a>
                 </li>
