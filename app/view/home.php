@@ -8,8 +8,8 @@
         </div>
     </div>
     <div class="summaryContainer">
-        <h5> Welcome to [Your System's Name]: A Comprehensive Real Estate Management Solution</h5>
-        <div>
+        <h2> Welcome to Real Estate Management Solution</h2>
+        <div  >
             <p>
                  In the fast-paced world of real estate, managing properties, clients, and transactions can be a complex task. [Your System's Name] is designed to simplify and streamline the process for real estate professionals. Whether you're managing residential or commercial properties, our system offers a user-friendly platform to oversee all aspects of real estate management, from property listings and client databases to contract management and financial tracking
             </p>
