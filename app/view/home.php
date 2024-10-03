@@ -15,4 +15,7 @@
             </p>
         </div>
     </div>
+    <div class="imagesHouseContainer">
+        <p>Rent Listing</p>
+    </div>
 </div>

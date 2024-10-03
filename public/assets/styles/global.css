@@ -65,4 +65,13 @@
 * .homeContainer .summaryContainer h2 {
   font-weight: bolder;
   text-align: center;
+}
+* .homeContainer .imagesHouseContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: yellow;
+  gap: 4rem;
+  padding: 5rem 10rem;
 }/*# sourceMappingURL=global.css.map */
