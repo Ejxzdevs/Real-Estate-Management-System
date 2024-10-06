@@ -1,10 +1,10 @@
 <div class="homeContainer">
     <div class="introContainer row ">
         <div class="col-md-6 left">
-            <label>Find Your <br>Dream <br><span class="customHouse">House</span></lab>
+            <label>Find Your Dream <br><span class="customHouse">House</span></label>
         </div>
         <div class="col-md-6">
-            <h2>Column 2</h2>
+            <h2></h2>
         </div>
     </div>
     <div class="summaryContainer">
@@ -16,6 +16,6 @@
         </div>
     </div>
     <div class="imagesHouseContainer">
-        <p>Rent Listing</p>
+        <p>Popular Listing</p>
     </div>
 </div>
