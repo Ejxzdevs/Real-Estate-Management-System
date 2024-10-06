@@ -16,6 +16,6 @@
         </div>
     </div>
     <div class="imagesHouseContainer">
-        <p>Popular Listing</p>
+        <h1>Popular Listing</h1>
     </div>
 </div>

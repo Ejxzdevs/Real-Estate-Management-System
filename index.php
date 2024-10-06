@@ -17,9 +17,9 @@
     <main>
         <?php require_once $page; ?>
     </main>
-
-
-
+    <footer>
+        <?php require_once "app/view/components/footer.php"; ?>
+    </footer>
      <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
