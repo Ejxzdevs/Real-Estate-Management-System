@@ -7,7 +7,7 @@
             <h2></h2>
         </div>
     </div>
-    <div class="summaryContainer">
+    <div class="greetContainer">
         <h2> Welcome to Real Estate Management Solution</h2>
         <div>
             <p>
@@ -15,8 +15,11 @@
             </p>
         </div>
     </div>
-    <div class="imagesHouseContainer">
+    <div class="popoularHouseContainer">
         <h1>Popular Listing</h1>
+        <div class="productContainer">
             <img src="public/images/products/HouseWithBalcony.jpg" alt="house with balcony">
             <img src="public/images/products/LuxuryHome.png" alt="" srcset="Luxury Home">
+            <img src="public/images/products/LuxuryHome.png" alt="" srcset="Luxury Home">
+        </div>            
 </div>

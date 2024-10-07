@@ -44,16 +44,11 @@
             background-position: center; /* Centers the image */
             background-repeat: no-repeat;
 
-
             & .left{
                 display: flex;
                 align-items: center;
                 justify-content: center;
               
-          
-                
-
-
                 & label {
                     font-size: 4rem;
                     font-weight: bold;
@@ -76,13 +71,14 @@
 
         }
 
-        & .summaryContainer{
+        & .greetContainer{
             background-color: #E5E6E6;
             height: 40vh;
             display: flex;
             flex-direction: column;
             gap: 2rem;
             padding: 2rem 5rem;
+            align-items: center;
 
             & h2 {
                 font-weight: bolder;
@@ -93,21 +89,33 @@
         }
 
 
-        .imagesHouseContainer {
+        .popoularHouseContainer {
             height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4rem;
-            padding: 3rem 6rem;
+            padding: 3rem 0;
+            gap: 2rem;
+            background-color: #E5E6E6;
 
-            & img {
+
+            & .productContainer {
                 display: flex;
-                width: 20rem;
-                border: solid 1rem black;
-                height: 20rem;
+                flex-direction: row;
+                align-items: center;
+                gap: 6rem;
+                padding: 3rem 6rem;
+        
+                
+                & img {
+                    width: 20rem;
+                    height: 20rem;
+                    border-radius: 10px;
+    
+                }
 
             }
+          
 
         }
         

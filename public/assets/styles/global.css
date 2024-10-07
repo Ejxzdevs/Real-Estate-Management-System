@@ -54,28 +54,36 @@
   background-clip: text; /* Standard syntax for background clip */
   color: transparent; /* Make the text color transparent */
 }
-* .homeContainer .summaryContainer {
+* .homeContainer .greetContainer {
   background-color: #E5E6E6;
   height: 40vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 2rem 5rem;
+  align-items: center;
 }
-* .homeContainer .summaryContainer h2 {
+* .homeContainer .greetContainer h2 {
   font-weight: bolder;
 }
-* .homeContainer .imagesHouseContainer {
+* .homeContainer .popoularHouseContainer {
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
+  padding: 3rem 0;
+  gap: 2rem;
+  background-color: #E5E6E6;
+}
+* .homeContainer .popoularHouseContainer .productContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6rem;
   padding: 3rem 6rem;
 }
-* .homeContainer .imagesHouseContainer img {
-  display: flex;
+* .homeContainer .popoularHouseContainer .productContainer img {
   width: 20rem;
-  border: solid 1rem black;
   height: 20rem;
+  border-radius: 10px;
 }/*# sourceMappingURL=global.css.map */
