@@ -1,6 +1,6 @@
 <div class="navContainer d-flex flex-row" style="height: 4rem; width: 100%; top: 0; position: fixed;" >
     <figure class="h-100 d-lg-flex d-none justify-content-center align-items-center w-25 w-lg-25">
-        <figcaption class="text-white">EjHayyy</figcaption>
+        <figcaption class="text-white fw-bolder fs-6">REAL ESTATE</figcaption>
     </figure>
     <nav class="navbar navbar-expand-lg w-100 w-lg-50">
         <button class="ms-3 navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
