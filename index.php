@@ -9,6 +9,7 @@
     <title>Real Estate Management System</title>
     <link rel="stylesheet" href="public/assets/styles/global.css">
     <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/twbs/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
     <header>
@@ -20,9 +21,6 @@
     <footer>
         <?php require_once "app/view/components/footer.php"; ?>
     </footer>
-
-
      <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

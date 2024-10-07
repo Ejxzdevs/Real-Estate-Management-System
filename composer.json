@@ -3,7 +3,8 @@
     "description": "A real estate management system for listing properties, managing clients, and handling transactions.",
     "type": "project",
     "require": {
-        "twbs/bootstrap": "dev-main"
+        "twbs/bootstrap": "dev-main",
+        "twbs/bootstrap-icons": "dev-main"
     },
     "license": "MIT",
     "authors": [

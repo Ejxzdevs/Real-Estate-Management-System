@@ -23,7 +23,7 @@
 
             <!-- 1 -->
             <div class="card d-flex justify-content-center align-items-center" style="width: 22rem;">
-                <img src="public/images/products/HouseWithBalcony.jpg" alt="house with balcony">
+                <img src="public/images/products/LuxuryHome.png" alt="house with balcony">
                 <div class="card-body">
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
@@ -32,7 +32,7 @@
 
             <!-- 2 --> 
             <div class="card d-flex justify-content-center align-items-center" style="width: 22rem;">
-                <img src="public/images/products/HouseWithBalcony.jpg" alt="house with balcony">
+                <img src="public/images/products/LuxuryHome.png" alt="house with balcony">
                 <div class="card-body">
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
@@ -40,7 +40,7 @@
 
             <!-- 3 --> 
              <div class="card d-flex justify-content-center align-items-center" style="width: 22rem;">
-                <img src="public/images/products/HouseWithBalcony.jpg" alt="house with balcony">
+                <img src="public/images/products/LuxuryHome.png" alt="house with balcony">
                 <div class="card-body">
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>

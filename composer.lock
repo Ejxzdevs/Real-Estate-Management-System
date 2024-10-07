@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6df2812dedfad1b694f0bd2d14f4a98b",
+    "content-hash": "bea50db746b690cb0eef8aa145a40474",
     "packages": [
         {
             "name": "twbs/bootstrap",
@@ -56,6 +56,46 @@
                 "source": "https://github.com/twbs/bootstrap/tree/main"
             },
             "time": "2024-09-26T13:03:48+00:00"
+        },
+        {
+            "name": "twbs/bootstrap-icons",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/icons.git",
+                "reference": "8a46937c005ca829471d3198b35bd3735c23fde5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/icons/zipball/8a46937c005ca829471d3198b35bd3735c23fde5",
+                "reference": "8a46937c005ca829471d3198b35bd3735c23fde5",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "Official open source SVG icon library for Bootstrap",
+            "homepage": "https://icons.getbootstrap.com/",
+            "keywords": [
+                "bootstrap",
+                "icon font",
+                "icons",
+                "svg"
+            ],
+            "support": {
+                "issues": "https://github.com/twbs/icons/issues",
+                "source": "https://github.com/twbs/icons/tree/main"
+            },
+            "time": "2024-10-01T14:41:09+00:00"
         }
     ],
     "packages-dev": [],
