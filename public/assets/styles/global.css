@@ -24,7 +24,7 @@
 }
 * .homeContainer {
   height: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 * .homeContainer .introContainer {
   padding-top: 10rem;

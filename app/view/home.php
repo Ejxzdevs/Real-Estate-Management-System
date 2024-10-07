@@ -17,7 +17,6 @@
     </div>
     <div class="imagesHouseContainer">
         <h1>Popular Listing</h1>
-            <img src="./../../public/images/homeContainer/sample.png" alt="sss">
-            <img src="./../../public/images/Backgrounds/Home_bg.png" alt="" srcset="dsadsadsa">
-    </div>
+            <img src="public/images/products/sample.png" alt="sss">
+            <img src="public/images/products/LuxuryHome.png" alt="" srcset="Luxury Home">
 </div>
