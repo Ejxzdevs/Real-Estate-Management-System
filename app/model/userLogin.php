@@ -23,7 +23,6 @@ class RegularUser implements UserType {
 }
 class UserFactory extends MySQL {
     public function findUser($username) {
-        parent::__construct();
         try {
             $this->openMySqlConnection();
             $select_username = "SELECT password, user_type FROM user_account WHERE username = :username";

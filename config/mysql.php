@@ -10,9 +10,11 @@ class MySQL extends Database {
         parent::__construct($this->MySqlHost,$this->MySqlUsername,$this->MySqlPassword,$this->MySqlDBName); 
     }
     public function openMySqlConnection(){
+        $this->__construct();
         $this->OpenConnection();
     }
     public function closeMySqlConnection(){
+        $this->__construct();
        $this->CloseConnection();
     }
 }

@@ -9,7 +9,6 @@ class Create_Table_Account extends MySQL {
     private $hashed_password;
 
     public function __construct() {
-        parent::__construct();
         try {
             $this->openMySqlConnection();
             // Create table if it doesn't exist

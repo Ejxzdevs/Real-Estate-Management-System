@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($user && $user->authenticate($password)) {
         if ($user instanceof Admin) {
-            header("Location: ../../view/admin.php");
+            header("Location: ../../../admin.php");
             exit();
         } else {
             header("Location: ../../../index.php");
