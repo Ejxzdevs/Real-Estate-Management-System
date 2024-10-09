@@ -14,11 +14,9 @@ class Admin implements UserType {
 }
 class RegularUser implements UserType {
     private $password;
-
     public function __construct($password) {
         $this->password = $password;
     }
-
     public function authenticate($password) {
         return password_verify($password, $this->password);
     }
@@ -35,10 +33,11 @@ class UserFactory extends MySQL {
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
             
             if ($user) {
-                return $user['user_type'] === 'admin' ? new Admin($user['password']) : new RegularUser($user['password']);
+                return $user['user_type'] === 'admin' 
+                ? new Admin($user['password']) 
+                : new RegularUser($user['password']);
             }
             return null;
-
         } catch (PDOException $e) {
             error_log("Database error: " . $e->getMessage());
         } finally {
