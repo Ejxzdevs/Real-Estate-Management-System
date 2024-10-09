@@ -23,7 +23,7 @@
     <div class="h-100 d-flex justify-content-center align-items-center">
             <form action="" class="border border-radius custom-form rounded-3 ">
                 <div class="h-25 d-flex flex-column justify-content-center ps-4   ">
-                   <h4> User Login </h4>
+                   <h4 class="text-center"> User Login</h4>
                 </div>
                 <div class="h-25 d-flex flex-column justify-content-center ps-4   ">
                     <label class="form-label fw-medium">Email</label>
