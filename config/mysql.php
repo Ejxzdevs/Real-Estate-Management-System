@@ -4,7 +4,7 @@ class MySQL extends Database {
     protected $MySqlHost = "localhost";
     protected $MySqlUsername ="root";
     protected $MySqlPassword = "";
-    protected $MySqlDBName = "ggg";
+    protected $MySqlDBName = "RealEstateManagamentSystem";
 
     public function __construct() {
         parent::__construct($this->MySqlHost,$this->MySqlUsername,$this->MySqlPassword,$this->MySqlDBName); 
