@@ -1,5 +1,5 @@
 <?php 
-    include "../routes/router.php"; 
+    include "routes/router.php"; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +14,7 @@
 <body>
     <main>
         <h5>WELCOME ADMIN</h5>
+
     </main>
      <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>

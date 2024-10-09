@@ -10,13 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($user && $user->authenticate($password)) {
         if ($user instanceof Admin) {
-            // header("Location: /admin_page.php");
-            // exit();
-            echo "admin pages";
+            header("Location: ../../view/admin.php");
+            exit();
         } else {
-            // header("Location: /regular_page.php");
-            // exit();
-            echo "regular user pages";
+            header("Location: ../../../index.php");
+            exit();
         }
     } else {
         echo "Authentication failed!";
