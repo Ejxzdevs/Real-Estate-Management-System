@@ -139,7 +139,28 @@
 
 
 // admin 
+.admin-header{
+    height: 10vh;
+}
+
 .admin-container{
     height: 100vh;
-    background-color: blue;
+    display: flex;
+    flex-direction: row;
+
+    & .mainContainer{
+        background-color: yellow;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+
+        & .admin-header{
+            height: 10vh;
+            background-color: green;
+        }
+    
+    }
+
 }
+
