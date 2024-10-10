@@ -2,14 +2,23 @@
 // Include the web routes from the routes file
 $routes = include 'routes/web.php';
 
+
 // Default to home page`
-if($_SESSION['user_type'] == 'admin'){
-    $page = 'app/view/dashboard.php';
-}elseif($_SESSION['user_type'] == 'regular'){
-    $page = 'app/view/home.php';
-}else{
-    $page = 'app/view/home.php';
+$page = 'app/view/home.php'; // Default page
+
+if (isset($_SESSION['user_type'])) {
+    switch ($_SESSION['user_type']) {
+        case 'admin':
+            $page = 'app/view/dashboard.php';
+            break;
+        case 'regular':
+            $page = 'app/view/home.php'; // This line is actually redundant
+            break;
+        // You could add more user types here if needed
+    }
 }
+
+// At this point, $page will be set appropriately
 
 // Check if the request is a GET request
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
