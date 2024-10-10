@@ -1,1 +1,40 @@
-/*# sourceMappingURL=sidebar.css.map */
+.navContainer {
+  background-color: aqua;
+  height: 100%;
+}
+.navContainer .logo {
+  height: 10%;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navContainer .menu {
+  height: 90%;
+  background-color: red;
+}
+.navContainer .menu ul {
+  height: 100%;
+  background-color: blue;
+  list-style: none;
+  padding: 0;
+}
+.navContainer .menu ul li {
+  background-color: white;
+  line-height: 3rem;
+  display: flex;
+  flex-direction: row;
+  padding-left: 1rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+.navContainer .menu ul li img {
+  height: 1.2rem;
+}
+.navContainer .menu ul li a {
+  text-decoration: none;
+  color: #586F69;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+}/*# sourceMappingURL=sidebar.css.map */

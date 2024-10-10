@@ -3,7 +3,7 @@
 return [
     'home' => 'home.php',
     'product' => 'product.php',
-    'login' => 'login.php',
+    'dashboard' => 'dashboard.php',
     
 ];
 
