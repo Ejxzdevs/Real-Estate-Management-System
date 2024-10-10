@@ -25,6 +25,6 @@
     </nav>
     <div class="h-100 flex-row d-lg-flex d-none justify-content-center align-items-center gap-4 w-25 w-lg-25 pe-5">
         <a class="text-light text-decoration-none btn-login" href="app/view/login.php">Login</a>
-        <button class="btn btn-light">Get Started</button>
+        <a class="btn btn-light" href="app/view/registerRegular.php" >Get Started</a>
     </div>
 </div>
