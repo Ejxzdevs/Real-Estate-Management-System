@@ -1,8 +1,7 @@
 <?php 
-   
-    include "routes/router.php"; 
     session_start();
-    echo   $_SESSION['user_type'];
+    include "routes/router.php"; 
+    echo $_SESSION['user_type'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +24,7 @@
                 <h1>its a header</h1>
             </header>
             <section class="border">
-                <?php require_once $page; ?>
+                <?php require_once $page ; ?>
             </section>
         </main>
     </div>

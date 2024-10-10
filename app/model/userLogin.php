@@ -1,7 +1,7 @@
 <?php 
 
 require_once '../../../config/mysql.php';
-session_start(); 
+
 interface UserType {
     public function authenticate($password);
 }
@@ -34,9 +34,13 @@ class UserFactory extends MySQL {
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
             
             if ($user) {
-                return $user['user_type'] === 'admin' 
+                $getpassword = $user['user_type'] === 'admin' 
                 ? new Admin($user['password']) 
                 : new RegularUser($user['password']);
+                return [
+                    'user_password' => $getpassword,
+                    'user_type' => $user['user_type']
+                ];
             }
             return null;
         } catch (PDOException $e) {

@@ -2,8 +2,14 @@
 // Include the web routes from the routes file
 $routes = include 'routes/web.php';
 
-// Default to home page
-$page = 'app/view/home.php';
+// Default to home page`
+if($_SESSION['user_type'] == 'admin'){
+    $page = 'app/view/dashboard.php';
+}elseif($_SESSION['user_type'] == 'regular'){
+    $page = 'app/view/home.php';
+}else{
+    echo $page = "none";
+}
 
 // Check if the request is a GET request
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -16,12 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Check route
         $route = isset($queryParams['route']) ? htmlspecialchars($queryParams['route']) : null;
         
+       
         // Check if the route exists
         if (array_key_exists($route, $routes)) {
-            $page = 'app/view/' . $routes[$route]; // Ensure the path is correct
+          echo  $page = 'app/view/' . $routes[$route]; // Ensure the path is correct
         } else {
             // Trigger custom "page not found" handling
             $page = 'app/view/404.php'; // Include a custom 404 error page
         }
     }
 }
+
