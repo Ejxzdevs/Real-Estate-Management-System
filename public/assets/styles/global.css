@@ -91,4 +91,9 @@
   width: 15rem;
   height: 15rem;
   border-radius: 10px;
+}
+
+.admin-container {
+  height: 100vh;
+  background-color: blue;
 }/*# sourceMappingURL=global.css.map */

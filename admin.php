@@ -12,10 +12,18 @@
     <link rel="stylesheet" href="vendor/twbs/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
-    <main>
-        <h5>WELCOME ADMIN</h5>
-
-    </main>
+    <div class="container-fluid admin-container">
+        <div class="row h-100 ">
+            <div class="col-md-3 border">
+                <h2>Column 1</h2>
+                <?php require_once 'app/view/components/sidebar.php' ?>
+            </div>
+            <div class="col-md-9 border ">
+                <h2>Column 2</h2>
+                <?php require_once $page; ?>
+            </div>
+        </div>
+    </div>
      <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
