@@ -35,7 +35,7 @@
     </style>
 <body>
     <div class="h-100 d-flex justify-content-center align-items-center">
-            <form action="" method="post" class="border border-radius custom-form rounded-3 ">
+            <form action="../http/controller/regularRegisterController.php" method="post" class="border border-radius custom-form rounded-3 ">
                 <div class="d-flex flex-column justify-content-center" style="height:20%">
                    <h1 class="text-center fw-bold text-white">Register</h1>
                 </div>
@@ -52,7 +52,7 @@
                     <input type="password" name="rePassword" class="form-control" placeholder="Retype your password">
                 </div>
                 <div class="d-flex flex-column justify-content-center" style="height:20%">
-                    <button class="btn btn-dark ">Submit</button>
+                    <button name="submit" class="btn btn-dark ">Submit</button>
                 </div>
             </form>
     </div>
