@@ -8,7 +8,7 @@ if($_SESSION['user_type'] == 'admin'){
 }elseif($_SESSION['user_type'] == 'regular'){
     $page = 'app/view/home.php';
 }else{
-    echo $page = "none";
+    $page = 'app/view/home.php';
 }
 
 // Check if the request is a GET request

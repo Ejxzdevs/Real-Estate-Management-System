@@ -24,7 +24,7 @@
                 <h1>its a header</h1>
             </header>
             <section class="border">
-                <?php require_once $page ; ?>
+                <?php require_once $page; ?>
             </section>
         </main>
     </div>
