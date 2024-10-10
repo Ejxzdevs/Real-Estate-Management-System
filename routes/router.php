@@ -4,7 +4,7 @@ $routes = include 'routes/web.php';
 
 
 // Default to home page`
-$page = 'app/view/home.php'; // Default page
+$page = 'app/view/home.php';
 
 if (isset($_SESSION['user_type'])) {
     switch ($_SESSION['user_type']) {
@@ -12,13 +12,10 @@ if (isset($_SESSION['user_type'])) {
             $page = 'app/view/dashboard.php';
             break;
         case 'regular':
-            $page = 'app/view/home.php'; // This line is actually redundant
+            $page = 'app/view/home.php'; 
             break;
-        // You could add more user types here if needed
     }
 }
-
-// At this point, $page will be set appropriately
 
 // Check if the request is a GET request
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
