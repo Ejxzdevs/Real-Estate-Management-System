@@ -1,5 +1,8 @@
 <?php 
+   
     include "routes/router.php"; 
+    session_start();
+    echo   $_SESSION['user_type'];
 ?>
 <!DOCTYPE html>
 <html lang="en">

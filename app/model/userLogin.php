@@ -1,5 +1,7 @@
 <?php 
+
 require_once '../../../config/mysql.php';
+session_start(); 
 interface UserType {
     public function authenticate($password);
 }
