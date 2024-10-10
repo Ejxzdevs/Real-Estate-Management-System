@@ -5,7 +5,7 @@
     <div class="menu">
         <ul>
             <li>
-                <img src="public/images/icons/home.png" alt=""><a href="?route=home">home</a>
+                <img src="public/images/icons/home.png" alt=""><a href="?route=dashboard">home</a>
             </li>
             <li>
                 <a href="?route=product">product</a>
