@@ -26,9 +26,9 @@ class RegularUser implements UserType {
 class UserFactory extends MySQL {
     public function findUser($username) {
         try {
-            $this->openMySqlConnection();
+            
             $select_username = "SELECT password, user_type FROM user_account WHERE username = :username";
-            $stmt = $this->conn->prepare($select_username);
+            $stmt = parent::openConnection()->prepare($select_username);
             $stmt->bindParam(':username', $username);
             $stmt->execute();
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -46,7 +46,7 @@ class UserFactory extends MySQL {
         } catch (PDOException $e) {
             error_log("Database error: " . $e->getMessage());
         } finally {
-            $this->closeMySqlConnection();
+            parent::closeConnection();
         }
     }
 }
