@@ -10,10 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($user && $user['user_password']->authenticate($password)) {
         $_SESSION['user_type'] = $user['user_type'];
         if ($user['user_type'] == "admin") {
-            header("Location: ../../../admin.php");
+            echo "<script>alert('Welcome Admin')</script>";
+            echo "<script> window.location.href='../../../admin.php'</script>";
             exit();
         } elseif($user['user_type'] == "regular"){
-            header("Location: ../../../index.php");
+            echo "<script>alert('Welcome User')</script>";
+            echo "<script> window.location.href='../../../index.php'</script>";
             exit();
         }else{
             $_SESSION['user_type'] = null;
