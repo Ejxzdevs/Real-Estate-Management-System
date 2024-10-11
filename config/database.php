@@ -1,10 +1,11 @@
 <?php 
+
 class Database {
     private $host;
     private $username;
     private $password;
     private $dbname;
-    protected $conn;
+    private $conn;
 
     // Constructor to initialize properties
     protected function __construct($Host, $Username, $Password, $DBName) {
@@ -12,6 +13,7 @@ class Database {
         $this->username = $Username;
         $this->password = $Password;
         $this->dbname = $DBName;
+
 
         // Create a connection without selecting a database initially
         try {
@@ -31,12 +33,13 @@ class Database {
 
     // OPEN CONNECTION
     protected function OpenConnection() {
-        $this->conn; // Return the PDO connection
+        return $this->conn; // Return the PDO connection
     }
 
     // CLOSE CONNECTION
     protected function CloseConnection() {
-        $this->conn = null; // Close the connection
         echo '<script>console.log("connection close");</script>';
+        return $this->conn = null; // Close the connection
+   
     }
 }

@@ -9,10 +9,9 @@ class UserRegister extends MYSQL {
         $this->username = $username;
         $this->password = $password;
         try {
-            $this->openMySqlConnection();
             $this->hashed_password = password_hash($this->password, PASSWORD_DEFAULT);
             $insert_account = "INSERT INTO user_account (username, password, user_type) VALUES (:name, :hashed_password, :type)";
-            $stmt = $this->conn->prepare($insert_account);
+            $stmt = parent::OpenConnection()->prepare($insert_account);
             $stmt->bindParam(':name', $this->username);
             $stmt->bindParam(':hashed_password', $this->hashed_password);
             $stmt->bindParam(':type', $this->userType);
@@ -20,7 +19,7 @@ class UserRegister extends MYSQL {
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         } finally {
-            $this->closeMySqlConnection();
+                parent::CloseConnection();
         }
 
     }
