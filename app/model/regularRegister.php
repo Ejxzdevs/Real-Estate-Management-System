@@ -6,7 +6,6 @@ class UserRegister extends MYSQL {
     private $hashed_password;
     private $userType = "regular";
     public function insertUser($username,$password){
-        parent::__construct();
         $this->username = $username;
         $this->password = $password;
         try {
