@@ -6,14 +6,14 @@ class MySQL extends Database {
     protected $MySqlPassword = "";
     protected $MySqlDBName = "RealEstateManagamentSystem";
 
-    public function __construct() {
+   protected function __construct() {
         parent::__construct($this->MySqlHost,$this->MySqlUsername,$this->MySqlPassword,$this->MySqlDBName); 
     }
-    public function openMySqlConnection(){
+   protected function openMySqlConnection(){
         $this->__construct();
         $this->OpenConnection();
     }
-    public function closeMySqlConnection(){
+   protected function closeMySqlConnection(){
         $this->__construct();
        $this->CloseConnection();
     }
