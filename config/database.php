@@ -39,7 +39,6 @@ class Database {
     // CLOSE CONNECTION
     protected function CloseConnection() {
         echo '<script>console.log("connection close");</script>';
-        return $this->conn = null; // Close the connection
-   
+        $this->conn = null; // Close the connection
     }
 }
