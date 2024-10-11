@@ -21,9 +21,10 @@ class Create_Table_Account extends MySQL {
             )";
             $this->conn->exec($create_table_account);
             $this->check_account_if_exist();
-            $this->closeMySqlConnection();
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
+        } finally {
+            $this->closeMySqlConnection();
         }
     }
 
