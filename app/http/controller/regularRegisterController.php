@@ -11,9 +11,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if(!empty($username) && !empty($password)){
             try {
                 $createUser = new UserRegister();
-                $createUser->insertUser($username, $password);
-                echo "<script>alert('User registered successfully!')</script>";
-                echo "<script> window.location.href='../../../index.php'</script>";
+                $result = $createUser->insertUser($username, $password);
+                if($result == 200){
+                    echo "<script>alert('User registered successfully!')</script>";
+                    echo "<script> window.location.href='../../../index.php'</script>";
+                }elseif($result == 409){
+                    echo "<script>alert('User already exist')</script>";
+                    echo "<script> window.location.href='../../../index.php'</script>";
+                }else{
+                    echo "<script> window.location.href='../../../index.php'</script>";
+                }
             } catch (Exception $e) {
                 echo "<script>alert('Error: " . $e->getMessage() . "')</script>";
             }
