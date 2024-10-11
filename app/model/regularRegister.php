@@ -23,6 +23,7 @@ class UserRegister extends MYSQL {
             return 200;
         } catch (PDOException $e) {
             echo "<script>alert('Error: " . $e->getMessage() . "')</script>";
+            return false;
         } finally {
                 parent::CloseConnection();
         }

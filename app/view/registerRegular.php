@@ -41,15 +41,15 @@
                 </div>
                 <div class="d-flex flex-column justify-content-center" style="height:20%">
                     <label class="form-label fw-medium text-white">Username</label>
-                    <input type="name" name="username" class="form-control" placeholder="Enter your Username">
+                    <input type="name" name="username" class="form-control" placeholder="Enter your Username" required>
                 </div>
                 <div class="d-flex flex-column justify-content-center" style="height:20%">
                     <label class="form-label fw-medium text-white">Password</label>
-                    <input type="password" name="password" class="form-control" placeholder="Enter your password">
+                    <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
                 </div>
                 <div class="d-flex flex-column justify-content-center" style="height:20%">
                     <label class="form-label fw-medium text-white">Retype Password</label>
-                    <input type="password" name="rePassword" class="form-control" placeholder="Retype your password">
+                    <input type="password" name="rePassword" class="form-control" placeholder="Retype your password" required>
                 </div>
                 <div class="d-flex flex-column justify-content-center" style="height:20%">
                     <button name="submit" class="btn btn-dark ">Submit</button>

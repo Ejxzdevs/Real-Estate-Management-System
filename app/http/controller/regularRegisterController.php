@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if($password !== $repassword){
         echo "<script>alert('password did not match')</script>";
     }else{
-        if(!empty($username) && !empty($password)){
+        if(strlen($username) > 6 && strlen($password) > 6){
             try {
                 $createUser = new UserRegister();
                 $result = $createUser->insertUser($username, $password);
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo "<script>alert('User registered successfully!')</script>";
                     echo "<script> window.location.href='../../../index.php'</script>";
                 }elseif($result == 409){
-                    echo "<script>alert('User already exist')</script>";
+                    echo "<script>alert('User is already exist')</script>";
                     echo "<script> window.location.href='../../../index.php'</script>";
                 }else{
                     echo "<script> window.location.href='../../../index.php'</script>";
@@ -25,7 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "<script>alert('Error: " . $e->getMessage() . "')</script>";
             }
         }else{
-            echo "password or username is empty";
+            echo "<script>alert('Password or Username should be greater than 6')</script>";
+            echo "<script> window.location.href='../../../index.php'</script>";
         }
         
     }
