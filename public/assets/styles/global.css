@@ -103,7 +103,7 @@
   flex-direction: row;
 }
 .admin-container .mainContainer {
-  background-color: yellow;
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -111,5 +111,4 @@
 }
 .admin-container .mainContainer .admin-header {
   height: 10vh;
-  background-color: green;
 }/*# sourceMappingURL=global.css.map */

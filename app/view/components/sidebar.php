@@ -1,17 +1,17 @@
 <nav class="navContainer" >
     <div class="logo">
-        <h5>Ejhay</h5>
+        <i class="bi bi-houses"></i><span>REAL STATE</span>
     </div>
     <div class="menu">
         <ul>
             <li>
-                <img src="public/images/icons/home.png" alt=""><a href="?route=dashboard">home</a>
+                <i class="bi bi-ui-checks-grid"></i><a href="?route=dashboard">home</a>
             </li>
             <li>
-                <a href="?route=product">product</a>
+                <i class="bi bi-house"></i><a href="?route=product">product</a>
             </li>  
             <li>
-                <img src="public/images/icons/home.png" alt=""><a href="app/http/controller/logout.php">Logout</a>
+                <i class="bi bi-box-arrow-in-left"></i><a href="app/http/controller/logout.php">Logout</a>
             </li>    
         </ul>
     </div>

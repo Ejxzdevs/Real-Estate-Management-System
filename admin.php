@@ -15,14 +15,14 @@
 </head>
 <body>
     <div class="container-fluid admin-container p-0">
-        <aside class="border" style="width: 20%;" >
+        <aside style="width: 20%;" >
                 <?php require_once 'app/view/components/sidebar.php' ?>
         </aside>
         <main class="mainContainer" style="width: 80%;"> 
             <header class="admin-header">
                 <h1>its a header</h1>
             </header>
-            <section class="border">
+            <section>
                 <?php require_once $page; ?>
             </section>
         </main>
