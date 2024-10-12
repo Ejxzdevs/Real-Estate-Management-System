@@ -3,7 +3,7 @@ require_once '../helper/csrf.php';
 require_once '../../model/userLogin.php';
 // user Login
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+    if (!isset($_POST['csrf_token']) || !CsrfHelper::validateToken($_POST['csrf_token'])) {
         http_response_code(403);
         echo "<script>alert('Invalid CSRF token! ')</script>";
         echo "<script> window.location.href='../../../index.php'</script>";
