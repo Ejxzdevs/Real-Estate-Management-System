@@ -20,7 +20,7 @@
         </aside>
         <main class="mainContainer" style="width: 80%;"> 
             <header class="admin-header">
-                <h1>its a header</h1>
+                <?php require_once 'app/view/components/adminHeader.php' ?>
             </header>
             <section>
                 <?php require_once $page; ?>
