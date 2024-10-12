@@ -1,5 +1,5 @@
 <?php 
-require_once '../helper/csrf.php';
+require_once '../helper/csrfHelper.php';
 require_once '../../model/regularRegister.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
