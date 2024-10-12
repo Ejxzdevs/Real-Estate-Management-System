@@ -9,10 +9,10 @@
         <div class="navExpandContainer collapse navbar-collapse" id="navbarNav">
             <ul class="w-100 ps-3 pt-2 pb-3 navbar-nav gap-2 gap-lg-3 d-flex flex-column flex-lg-row justify-content-center align-items-start justify-content-lg-center align-items-lg-center"> <!-- Added d-flex and gap-5 -->
                 <li class="nav-item">
-                    <a class="nav-link text-light active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link text-light active" aria-current="page" href="?route=home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light " href="#">Rent</a>
+                    <a class="nav-link text-light " href="?route=product">Rent</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light " href="#">Buy</a>

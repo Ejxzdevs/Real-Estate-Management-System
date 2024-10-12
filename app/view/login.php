@@ -1,3 +1,7 @@
+<?php 
+require_once '../http/helper/csrf.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +44,7 @@
                    <h1 class="text-center fw-bold text-white">Login</h1>
                 </div>
                 <div class="h-25 d-flex flex-column justify-content-center   ">
+                    <input type="text" name="csrf_token" value="<?php echo CsrfHelper::generateToken(); ?>">
                     <label class="form-label fw-medium text-white">Username</label>
                     <input type="name" name="username" class="form-control" placeholder="Enter your Username">
                 </div>

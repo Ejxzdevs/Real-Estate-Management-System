@@ -2,7 +2,6 @@
 // Include the web routes from the routes file
 $routes = include 'routes/web.php';
 
-
 // Default to home page`
 $page = 'app/view/home.php';
 
