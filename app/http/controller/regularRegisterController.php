@@ -1,7 +1,16 @@
 <?php 
+require_once '../helper/csrf.php';
 require_once '../../model/regularRegister.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_POST['csrf_token']) || !CsrfHelper::validateToken($_POST['csrf_token'])) {
+        http_response_code(403);
+        echo "<script>alert('Invalid CSRF token! ')</script>";
+        echo "<script> window.location.href='../../../index.php'</script>";
+        exit();
+    }
+    CsrfHelper::regenerateToken();
+
     $username = htmlspecialchars($_POST['username'] ?? '', ENT_QUOTES, 'UTF-8');
     $password = htmlspecialchars($_POST['password'] ?? '', ENT_QUOTES, 'UTF-8');
     $repassword = htmlspecialchars($_POST['rePassword'] ?? '', ENT_QUOTES, 'UTF-8');
