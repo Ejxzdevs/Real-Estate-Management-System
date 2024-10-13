@@ -16,7 +16,7 @@
                 <i class="bi bi-question-circle"></i><a href="?route=product">Inquiries</a>
             </li>
             <li>
-                <i class="bi bi-file-earmark-text"></i>Reports</a>
+                <i class="bi bi-file-earmark-text"></i><a href="" >Reports</a>
             </li>
             <li>
                 <i class="bi bi-gear"></i><a href="?route=product">Settings</a>

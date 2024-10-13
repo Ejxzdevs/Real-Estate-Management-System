@@ -44,9 +44,18 @@
   line-height: 3.5rem;
   display: flex;
   flex-direction: row;
-  padding-left: 2rem;
   align-items: center;
   gap: 0.5rem;
+  padding-left: 2rem;
+}
+.navContainer .menu ul li:hover {
+  background-color: #00695D;
+}
+.navContainer .menu ul li:hover a {
+  color: white;
+}
+.navContainer .menu ul li:hover i {
+  color: white;
 }
 .navContainer .menu ul li img {
   height: 1.2rem;
