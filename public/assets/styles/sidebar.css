@@ -30,6 +30,10 @@
 }
 .navContainer .menu {
   height: 90%;
+  padding: 1rem 0;
+}
+.navContainer .menu h5 {
+  margin-left: 2rem;
 }
 .navContainer .menu ul {
   height: 100%;

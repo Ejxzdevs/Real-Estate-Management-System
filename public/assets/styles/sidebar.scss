@@ -39,6 +39,11 @@
 
     & .menu {
         height: 90%;
+        padding: 1rem 0;
+
+        & h5 {
+            margin-left: 2rem;
+        }
 
 
         & ul {
