@@ -58,6 +58,13 @@ class ProductsController {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Create or Add property
     if(isset($_POST['insert'])){
+        if (!isset($_POST['csrf_token']) || !CsrfHelper::validateToken($_POST['csrf_token'])) {
+            http_response_code(403);
+            echo "<script>alert('Invalid CSRF token! ')</script>";
+            echo "<script> window.location.href='../../../index.php'</script>";
+            exit();
+        }
+        CsrfHelper::regenerateToken();
         try {
             $productModel = new Products();
             $productController = new ProductsController($productModel);
