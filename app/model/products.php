@@ -1,5 +1,5 @@
 <?php
-require_once '../../../config/mysql.php';
+require_once "../../http/helper/connectHelper.php";
 
 class Products extends MySQL {
     public function addProduct($name, $description, $address, $price, $status, $image) {

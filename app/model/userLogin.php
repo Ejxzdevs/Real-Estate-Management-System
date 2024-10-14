@@ -1,6 +1,5 @@
 <?php 
-
-require_once '../../../config/mysql.php';
+require_once "../../http/helper/connectHelper.php";
 
 interface UserType {
     public function authenticate($password);
