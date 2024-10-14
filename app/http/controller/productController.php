@@ -1,8 +1,6 @@
 <?php 
 require_once '../helper/csrfHelper.php';
 require_once '../../model/products.php';
-
-
 // Insert Products
 class ProductsController {
     private $model;
