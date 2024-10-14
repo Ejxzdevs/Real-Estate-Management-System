@@ -1,5 +1,4 @@
 <?php 
-session_start();
 require_once '../http/helper/csrfHelper.php';
 ?>
 <!DOCTYPE html>

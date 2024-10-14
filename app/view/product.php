@@ -1,6 +1,4 @@
-<?php 
-    require_once 'app/http/helper/csrfHelper.php';
-?>
+
 <div class="d-flex flex-column p-4">
     <div class="d-flex flex-row d-flex justify-content-between w-100 h-100 " >
         <h5 class="mt-3" >Products</h5>
@@ -10,9 +8,10 @@
     <thead class="bg-light">
         <tr>
         <th>Name</th>
-        <th>Title</th>
+        <th>Product</th>
+        <th>Description</th>
+        <th>Price</th>
         <th>Status</th>
-        <th>Position</th>
         <th>Actions</th>
         </tr>
     </thead>
@@ -129,7 +128,7 @@
             <div class="modal-body">
                 <form action="app/http/controller/productController.php" method="POST" id="addPropertyForm" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <input type="hidden" name="csrf_token" value="<?php echo CsrfHelper::generateToken(); ?>">
+  
                         <input type="hidden" name="insert" >
                         <label for="propertyName" class="form-label">Property Name</label>
                         <input type="text" name="propertyName" class="form-control" id="propertyName" required>

@@ -1,6 +1,6 @@
 <?php
-session_start();
 require_once '../http/helper/csrfHelper.php';
+echo $_SESSION['csrf_token'];
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ require_once '../http/helper/csrfHelper.php';
                    <h1 class="text-center fw-bold text-white">Login</h1>
                 </div>
                 <div class="h-25 d-flex flex-column justify-content-center   ">
-                    <input type="hidden" name="csrf_token" value="<?php echo CsrfHelper::generateToken(); ?>">
+                    <input type="text" name="csrf_token" value="<?php echo CsrfHelper::generateToken(); ?>">
                     <label class="form-label fw-medium text-white">Username</label>
                     <input type="name" name="username" class="form-control" placeholder="Enter your Username">
                 </div>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once '../helper/csrfHelper.php';
 require_once '../../model/regularRegister.php';
 

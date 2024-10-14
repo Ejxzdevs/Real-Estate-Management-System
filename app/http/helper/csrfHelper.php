@@ -1,4 +1,5 @@
 <?php
+session_start();
 class CsrfHelper
 {
     private function __construct(){}
