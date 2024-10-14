@@ -1,5 +1,5 @@
 <?php 
-require_once '../../../config/mysql.php';
+require_once "../../http/helper/connectHelper.php";
 class UserRegister extends MYSQL {
     private $username;
     private $password;
