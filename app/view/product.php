@@ -126,6 +126,7 @@
             <div class="modal-body">
                 <form action="app/http/controller/productController.php" method="POST" id="addPropertyForm" enctype="multipart/form-data">
                     <div class="mb-3">
+                        <input type="hidden" name="insert" >
                         <label for="propertyName" class="form-label">Property Name</label>
                         <input type="text" name="propertyName" class="form-control" id="propertyName" required>
                     </div>

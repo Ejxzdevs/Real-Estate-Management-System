@@ -56,18 +56,24 @@ class ProductsController {
 
 // Handle the POST request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    try {
-        $productModel = new Products();
-        $productController = new ProductsController($productModel);
-        $result_status = $productController->createProduct($_POST, $_FILES);
-        
-        if ($result_status === 200) {
-            echo "<script>alert('Product successfully added')</script>";
-            echo "<script> window.location.href='../../../admin.php?route=product'</script>";
-        } else {
-            echo "Failed to insert property.";
+    // Create or Add property
+    if(isset($_POST['insert'])){
+        try {
+            $productModel = new Products();
+            $productController = new ProductsController($productModel);
+            $result_status = $productController->createProduct($_POST, $_FILES);
+            
+            if ($result_status === 200) {
+                echo "<script>alert('Product successfully added')</script>";
+                echo "<script> window.location.href='../../../admin.php?route=product'</script>";
+            } else {
+                echo "Failed to insert property.";
+            }
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
         }
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
+    }
+    if(isset($_POST['update'])){
+
     }
 }
