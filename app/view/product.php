@@ -1,7 +1,12 @@
-<?php 
+<?php
+require_once 'app/http/helper/csrfHelper.php';
 require_once 'app/http/helper/displayProduct.php';
 $products = new DisplayProduct();
 $data = $products->getAllProducts();
+echo $csrf_token = CsrfHelper::generateToken();
+
+
+
 ?>
 <div class="d-flex flex-column p-4">
     <div class="d-flex flex-row justify-content-between w-100 h-100">
@@ -60,6 +65,7 @@ $data = $products->getAllProducts();
             </div>
             <div class="modal-body">
                 <form action="app/http/controller/productController.php" method="POST" id="addPropertyForm" enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
                     <input type="hidden" name="insert">
                     <div class="mb-3">
                         <label for="propertyName" class="form-label">Property Name</label>
