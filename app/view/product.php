@@ -3,7 +3,7 @@ require_once 'app/http/helper/csrfHelper.php';
 require_once 'app/http/helper/displayProduct.php';
 $products = new DisplayProduct();
 $data = $products->getAllProducts();
-echo $csrf_token = CsrfHelper::generateToken();
+$csrf_token = CsrfHelper::generateToken();
 
 
 
@@ -116,6 +116,7 @@ echo $csrf_token = CsrfHelper::generateToken();
             </div>
             <div class="modal-body">
                 <form action="app/http/controller/productController.php" method="POST" id="updatePropertyForm" enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
                     <input type="hidden" name="update">
                     <input type="hidden" name="id" class="form-control" id="updatePropertyID" required>
                     <div class="mb-3">
