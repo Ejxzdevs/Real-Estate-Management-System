@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/twbs/bootstrap-icons/font/bootstrap-icons.css">
 </head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+</style>
 <body>
     <div class="container-fluid admin-container p-0">
         <aside style="width: 20%;" >

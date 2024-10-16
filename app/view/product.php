@@ -8,51 +8,106 @@ $csrf_token = CsrfHelper::generateToken();
 
 
 ?>
+
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .table th, .table td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #dee2e6;
+    }
+    .table th {
+        background-color: #f8f9fa;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    .table tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+    .table img {
+        height: 3rem;
+        width: 4rem;
+        border-radius: 4px;
+    }
+    .table-container {
+        max-height: 70vh; 
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .table td {
+        word-wrap: break-word; 
+        overflow-wrap: break-word; 
+        max-width: 200px;
+    }
+    .table-actions a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .table-actions a:hover {
+        text-decoration: underline;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+</style>
+
 <div class="d-flex flex-column p-4">
     <div class="d-flex flex-row justify-content-between w-100 h-100">
         <h5 class="mt-3">Products</h5>
         <button class="btn btn-primary me-3" style="width: 120px; height: 2.5rem;" data-bs-toggle="modal" data-bs-target="#addProperty">ADD</button>
     </div>
-    <table class="table align-middle mb-0 bg-white p-3 mt-4">
-        <thead class="bg-light">
-            <tr>
-                <th>Image</th>
-                <th>Product</th>
-                <th>Description</th>
-                <th>Location</th>
-                <th>Price</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($data as $product): ?>
-            <tr>
-                <td><img src="public/images/products/<?php echo htmlspecialchars($product['image']); ?>" style="height:3rem; width:4rem;"></td>
-                <td><?php echo htmlspecialchars($product['name']); ?></td>
-                <td><?php echo htmlspecialchars($product['description']); ?></td>
-                <td><?php echo htmlspecialchars($product['address']); ?></td>
-                <td><?php echo htmlspecialchars($product['price']); ?></td>
-                <td><?php echo htmlspecialchars($product['status']); ?></td>
-                <td>
-                    <a href="#" 
-                       onclick="
-                        document.getElementById('updatePropertyID').value = '<?php echo htmlspecialchars($product['id']); ?>';
-                        document.getElementById('updatePropertyName').value = '<?php echo htmlspecialchars($product['name']); ?>';
-                        document.getElementById('updatePropertyDescription').value = '<?php echo htmlspecialchars($product['description']); ?>';
-                        document.getElementById('updatePropertyAddress').value = '<?php echo htmlspecialchars($product['address']); ?>';
-                        document.getElementById('updatePropertyPrice').value = '<?php echo htmlspecialchars($product['price']); ?>';
-                        document.getElementById('updatePropertyStatus').value = '<?php echo htmlspecialchars($product['status']); ?>';
-                        document.getElementById('updatePropertyImage').value = '<?php echo htmlspecialchars($product['image']); ?>';
-                        document.getElementById('imagePreview').src = 'public/images/products/<?php echo htmlspecialchars($product['image']); ?>';
-                        document.getElementById('imagePreview').style.display = 'block';
-                       "
-                       data-bs-toggle="modal" data-bs-target="#updateProperty">Edit</a>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
+    <div class="table-container">
+        <table class="table align-middle mb-0 bg-white p-3 mt-4">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($data as $product): ?>
+                    <tr>
+                        <td><img src="public/images/products/<?php echo htmlspecialchars($product['image']); ?>" alt="Product Image"></td>
+                        <td><?php echo htmlspecialchars($product['name']); ?></td>
+                        <td><?php echo htmlspecialchars($product['description']); ?></td>
+                        <td><?php echo htmlspecialchars($product['address']); ?></td>
+                        <td><?php echo htmlspecialchars($product['price']); ?></td>
+                        <td><?php echo htmlspecialchars($product['status']); ?></td>
+                        <td class="table-actions">
+                        <a href="#" 
+                               onclick="
+                                document.getElementById('updatePropertyID').value = '<?php echo htmlspecialchars($product['id']); ?>';
+                                document.getElementById('updatePropertyName').value = '<?php echo htmlspecialchars($product['name']); ?>';
+                                document.getElementById('updatePropertyDescription').value = '<?php echo htmlspecialchars($product['description']); ?>';
+                                document.getElementById('updatePropertyAddress').value = '<?php echo htmlspecialchars($product['address']); ?>';
+                                document.getElementById('updatePropertyPrice').value = '<?php echo htmlspecialchars($product['price']); ?>';
+                                document.getElementById('updatePropertyStatus').value = '<?php echo htmlspecialchars($product['status']); ?>';
+                                document.getElementById('updatePropertyImage').value = '<?php echo htmlspecialchars($product['image']); ?>';
+                                document.getElementById('imagePreview').src = 'public/images/products/<?php echo htmlspecialchars($product['image']); ?>';
+                                document.getElementById('imagePreview').style.display = 'block';
+                               "
+                               data-bs-toggle="modal" data-bs-target="#updateProperty">Edit</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <!-- Add Property Modal -->
@@ -145,7 +200,7 @@ $csrf_token = CsrfHelper::generateToken();
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="updatePropertyImage" class="form-label">Update Image</label>
+                        <label class="form-label">Update Image</label>
                         <input type="file" name="propertyImage" class="form-control" accept="image/*" onchange="previewImage(event)">
                     </div>
                     <div class="mb-3">
