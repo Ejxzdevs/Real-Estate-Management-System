@@ -20,32 +20,33 @@ $data = $products->getAllProducts();
                 <th>Actions</th>
             </tr>
         </thead>
-        <?php foreach ($data as $product): ?>
         <tbody>
+        <?php foreach ($data as $product): ?>
             <tr>
-                <td><img src="public/images/products/<?php echo $product['image']; ?>" style="height:3rem; width:4rem;"></td>
-                <td><?php echo $product['name']; ?></td>
-                <td><?php echo $product['description']; ?></td>
-                <td><?php echo $product['address']; ?></td>
-                <td><?php echo $product['price']; ?></td>
-                <td><?php echo $product['status']; ?></td>
+                <td><img src="public/images/products/<?php echo htmlspecialchars($product['image']); ?>" style="height:3rem; width:4rem;"></td>
+                <td><?php echo htmlspecialchars($product['name']); ?></td>
+                <td><?php echo htmlspecialchars($product['description']); ?></td>
+                <td><?php echo htmlspecialchars($product['address']); ?></td>
+                <td><?php echo htmlspecialchars($product['price']); ?></td>
+                <td><?php echo htmlspecialchars($product['status']); ?></td>
                 <td>
                     <a href="#" 
                        onclick="
-                        document.getElementById('updatePropertyID').value = `<?php echo $product['id'] ?>`;
-                        document.getElementById('updatePropertyName').value = `<?php echo $product['name'] ?>`;
-                        document.getElementById('updatePropertyDescription').value = `<?php echo $product['description'] ?>`;
-                        document.getElementById('updatePropertyAddress').value = `<?php echo $product['address'] ?>`;
-                        document.getElementById('updatePropertyPrice').value = `<?php echo $product['price'] ?>`;
-                        document.getElementById('updatePropertyStatus').value = `<?php echo $product['status'] ?>`;
-                        document.getElementById('imagePreview').src = `public/images/products/<?php echo $product['image']; ?>`;
+                        document.getElementById('updatePropertyID').value = '<?php echo htmlspecialchars($product['id']); ?>';
+                        document.getElementById('updatePropertyName').value = '<?php echo htmlspecialchars($product['name']); ?>';
+                        document.getElementById('updatePropertyDescription').value = '<?php echo htmlspecialchars($product['description']); ?>';
+                        document.getElementById('updatePropertyAddress').value = '<?php echo htmlspecialchars($product['address']); ?>';
+                        document.getElementById('updatePropertyPrice').value = '<?php echo htmlspecialchars($product['price']); ?>';
+                        document.getElementById('updatePropertyStatus').value = '<?php echo htmlspecialchars($product['status']); ?>';
+                        document.getElementById('updatePropertyImage').value = '<?php echo htmlspecialchars($product['image']); ?>';
+                        document.getElementById('imagePreview').src = 'public/images/products/<?php echo htmlspecialchars($product['image']); ?>';
                         document.getElementById('imagePreview').style.display = 'block';
                        "
                        data-bs-toggle="modal" data-bs-target="#updateProperty">Edit</a>
                 </td>
             </tr>
-        </tbody>
         <?php endforeach; ?>
+        </tbody>
     </table>
 </div>
 
@@ -54,13 +55,13 @@ $data = $products->getAllProducts();
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addProperty">Add Property</h5>
+                <h5 class="modal-title">Add Property</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="app/http/controller/productController.php" method="POST" id="addPropertyForm" enctype="multipart/form-data">
+                    <input type="hidden" name="insert">
                     <div class="mb-3">
-                        <input type="hidden" name="insert">
                         <label for="propertyName" class="form-label">Property Name</label>
                         <input type="text" name="propertyName" class="form-control" id="propertyName" required>
                     </div>
@@ -74,7 +75,7 @@ $data = $products->getAllProducts();
                     </div>
                     <div class="mb-3">
                         <label for="propertyPrice" class="form-label">Price</label>
-                        <input type="number" name="propertyPrice" class="form-control" id="propertyPrice" required>
+                        <input type="text" name="propertyPrice" class="form-control" id="propertyPrice" required>
                     </div>
                     <div class="mb-3">
                         <label for="propertyStatus" class="form-label">Status</label>
@@ -104,15 +105,15 @@ $data = $products->getAllProducts();
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="updateProperty">Update Property</h5>
+                <h5 class="modal-title">Update Property</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="app/http/controller/productController.php" method="POST" id="updatePropertyForm" enctype="multipart/form-data">
+                    <input type="hidden" name="update">
+                    <input type="hidden" name="id" class="form-control" id="updatePropertyID" required>
                     <div class="mb-3">
-                        <input type="hidden" name="update">
                         <label for="updatePropertyName" class="form-label">Property Name</label>
-                        <input type="text" name="id" class="form-control" id="updatePropertyID" required>
                         <input type="text" name="propertyName" class="form-control" id="updatePropertyName" required>
                     </div>
                     <div class="mb-3">
@@ -125,7 +126,7 @@ $data = $products->getAllProducts();
                     </div>
                     <div class="mb-3">
                         <label for="updatePropertyPrice" class="form-label">Price</label>
-                        <input type="number" name="propertyPrice" class="form-control" id="updatePropertyPrice" required>
+                        <input type="text" name="propertyPrice" class="form-control" id="updatePropertyPrice" required>
                     </div>
                     <div class="mb-3">
                         <label for="updatePropertyStatus" class="form-label">Status</label>
@@ -138,10 +139,11 @@ $data = $products->getAllProducts();
                     </div>
                     <div class="mb-3">
                         <label for="updatePropertyImage" class="form-label">Update Image</label>
-                        <input type="file" name="propertyImage" class="form-control" id="updatePropertyImage" accept="image/*" required onchange="previewImage(event)">
+                        <input type="file" name="propertyImage" class="form-control" accept="image/*" onchange="previewImage(event)">
                     </div>
                     <div class="mb-3">
                         <img id="imagePreview" src="" alt="Image Preview" style="display: none; max-width: 100%; height: auto;">
+                        <input type="hidden" name="prePropertyImage" class="form-control" id="updatePropertyImage" accept="image/*" >
                     </div>
                 </form>
             </div>
@@ -152,24 +154,3 @@ $data = $products->getAllProducts();
         </div>
     </div>
 </div>
-
-<script>
-function previewImage(event) {
-    const imagePreview = document.getElementById('imagePreview');
-    const file = event.target.files[0];
-    
-    if (file) {
-        const reader = new FileReader();
-        
-        reader.onload = function(e) {
-            imagePreview.src = e.target.result;
-            imagePreview.style.display = 'block';
-        }
-        
-        reader.readAsDataURL(file);
-    } else {
-        imagePreview.src = '';
-        imagePreview.style.display = 'none';
-    }
-}
-</script>
