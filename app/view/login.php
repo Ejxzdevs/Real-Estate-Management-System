@@ -1,5 +1,5 @@
 <?php
-require_once '../http/helper/csrfHelper.php';
+    require_once '../http/helper/csrfHelper.php';
 ?>
 
 <!DOCTYPE html>
@@ -58,5 +58,5 @@ require_once '../http/helper/csrfHelper.php';
             </form>
     </div>
 </body>
-<script src="../../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </html>
