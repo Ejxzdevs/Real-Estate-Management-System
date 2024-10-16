@@ -43,22 +43,22 @@ $csrf_token = CsrfHelper::generateToken();
         overflow-wrap: break-word; 
         max-width: 200px;
     }
-    .table-actions a {
-        color: #007bff;
-        text-decoration: none;
-        font-weight: bold;
+    .table-actions {
+        height: 5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-width: 0;
+        gap:2rem;
     }
-    .table-actions a:hover {
-        text-decoration: underline;
+    .table-actions .edit {
+        color: blue;
     }
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
+    .table-actions .delete {
+        color:crimson;
     }
-    .btn-primary:hover {
-        background-color: #0056b3;
-        border-color: #0056b3;
-    }
+   
 </style>
 
 <div class="d-flex flex-column p-4">
@@ -101,7 +101,8 @@ $csrf_token = CsrfHelper::generateToken();
                                 document.getElementById('imagePreview').src = 'public/images/products/<?php echo htmlspecialchars($product['image']); ?>';
                                 document.getElementById('imagePreview').style.display = 'block';
                                "
-                               data-bs-toggle="modal" data-bs-target="#updateProperty">Edit</a>
+                               data-bs-toggle="modal" data-bs-target="#updateProperty" class="edit" ><i class="bi bi-pencil-square"></i></a>
+                               <a href="" class="delete"><i class="bi bi-trash3"></i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
