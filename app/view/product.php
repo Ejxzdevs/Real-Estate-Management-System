@@ -15,15 +15,16 @@ $csrf_token = CsrfHelper::generateToken();
         border-collapse: collapse;
     }
     .table th, .table td {
-        padding: 12px;
-        text-align: left;
+        padding: 8px;
         border: 1px solid #dee2e6;
+        text-align:center;
     }
     .table th {
         background-color: #f8f9fa;
         position: sticky;
         top: 0;
         z-index: 10;
+        width: 200px;
     }
     .table tbody tr:hover {
         background-color: #f1f1f1;
@@ -42,6 +43,9 @@ $csrf_token = CsrfHelper::generateToken();
         word-wrap: break-word; 
         overflow-wrap: break-word; 
         max-width: 200px;
+     
+
+        
     }
     .table-actions {
         height: 5rem;
@@ -62,12 +66,12 @@ $csrf_token = CsrfHelper::generateToken();
 </style>
 
 <div class="d-flex flex-column p-4">
-    <div class="d-flex flex-row justify-content-between w-100 h-100">
+    <div class="d-flex flex-row justify-content-between w-100 h-100 mb-2">
         <h5 class="mt-3">Products</h5>
         <button class="btn btn-primary me-3" style="width: 120px; height: 2.5rem;" data-bs-toggle="modal" data-bs-target="#addProperty">ADD</button>
     </div>
     <div class="table-container">
-        <table class="table align-middle mb-0 bg-white p-3 mt-4">
+        <table class="table align-middle mb-0 bg-white p-3 ">
             <thead>
                 <tr>
                     <th>Image</th>
@@ -102,7 +106,14 @@ $csrf_token = CsrfHelper::generateToken();
                                 document.getElementById('imagePreview').style.display = 'block';
                                "
                                data-bs-toggle="modal" data-bs-target="#updateProperty" class="edit" ><i class="bi bi-pencil-square"></i></a>
-                               <a href="" class="delete"><i class="bi bi-trash3"></i></a>
+                               <form action="app/http/controller/productController.php" method="POST" style="display: inline;">
+                                    <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
+                                    <input type="hidden" name="delete">
+                                    <input type="hidden" name="id" value="<?php echo htmlspecialchars($product['id']); ?>">
+                                    <button type="submit" class="delete">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>

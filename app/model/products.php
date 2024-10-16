@@ -32,7 +32,21 @@ class Products extends MySQL {
             $stmt->bindParam(':address', $address);
             $stmt->bindParam(':price', $price);
             $stmt->bindParam(':status', $status);
-            echo $stmt->bindParam(':image', $image);
+            $stmt->bindParam(':image', $image);
+            $stmt->execute();
+            return 200;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        } finally {
+            parent::closeConnection();
+        }
+    }
+
+    public function deleteProduct($id) {
+        try {
+            $stmt = parent::openConnection()->prepare("DELETE FROM properties WHERE id = :id");
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
             return 200;
         } catch (PDOException $e) {
