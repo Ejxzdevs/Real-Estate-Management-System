@@ -32,13 +32,14 @@ $data = $products->getAllProducts();
                 <td>
                     <a href="#" 
                        onclick="
-                           document.getElementById('updatePropertyName').value = `<?php echo $product['name'] ?>`;
-                           document.getElementById('updatePropertyDescription').value = `<?php echo $product['description'] ?>`;
-                           document.getElementById('updatePropertyAddress').value = `<?php echo $product['address'] ?>`;
-                           document.getElementById('updatePropertyPrice').value = `<?php echo $product['price'] ?>`;
-                           document.getElementById('updatePropertyStatus').value = `<?php echo $product['status'] ?>`;
-                           document.getElementById('imagePreview').src = `public/images/products/<?php echo $product['image']; ?>`;
-                           document.getElementById('imagePreview').style.display = 'block';
+                        document.getElementById('updatePropertyID').value = `<?php echo $product['id'] ?>`;
+                        document.getElementById('updatePropertyName').value = `<?php echo $product['name'] ?>`;
+                        document.getElementById('updatePropertyDescription').value = `<?php echo $product['description'] ?>`;
+                        document.getElementById('updatePropertyAddress').value = `<?php echo $product['address'] ?>`;
+                        document.getElementById('updatePropertyPrice').value = `<?php echo $product['price'] ?>`;
+                        document.getElementById('updatePropertyStatus').value = `<?php echo $product['status'] ?>`;
+                        document.getElementById('imagePreview').src = `public/images/products/<?php echo $product['image']; ?>`;
+                        document.getElementById('imagePreview').style.display = 'block';
                        "
                        data-bs-toggle="modal" data-bs-target="#updateProperty">Edit</a>
                 </td>
@@ -111,6 +112,7 @@ $data = $products->getAllProducts();
                     <div class="mb-3">
                         <input type="hidden" name="update">
                         <label for="updatePropertyName" class="form-label">Property Name</label>
+                        <input type="text" name="id" class="form-control" id="updatePropertyID" required>
                         <input type="text" name="propertyName" class="form-control" id="updatePropertyName" required>
                     </div>
                     <div class="mb-3">

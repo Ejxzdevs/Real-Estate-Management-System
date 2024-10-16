@@ -28,6 +28,7 @@
             </section>
         </main>
     </div>
-     <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="public/assets/js/product.js"></script>
+    <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
