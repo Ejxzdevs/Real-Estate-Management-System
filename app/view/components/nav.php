@@ -1,9 +1,20 @@
 <div class="navContainer d-flex flex-row" style="height: 4rem; width: 100%; top: 0; position: fixed;" >
     <figure class="h-100 d-lg-flex d-none justify-content-center align-items-center w-25 w-lg-25">
-        <figcaption class="text-white fw-bolder fs-6">REAL ESTATE</figcaption>
+        <figcaption class="d-flex flex-row gap-1"><i class="bi bi-houses" 
+        style=" 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            background-color: #00695D;
+            color: white;
+            width: 3rem;
+            border-radius: 5px;
+            padding: 5px;"
+            ></i><span class="text-white fw-bolder mt-2" style="font-size: 1.2rem;" >REAL ESTATE</span></figcaption>
     </figure>
     <nav class="navbar navbar-expand-lg w-100 w-lg-50">
-        <button class="ms-3 navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="ms-3 navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navExpandContainer collapse navbar-collapse" id="navbarNav">
