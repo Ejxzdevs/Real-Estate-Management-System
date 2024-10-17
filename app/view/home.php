@@ -12,19 +12,19 @@
             </p>
         </div>
     </div>
-    <div class="py-5 d-flex flex-column border" style="height: 400px;" >
-        <h1 class="fw-bold text-dark text-center mb-3" >Why Choose Real Estate as an Investment?</h1>
-        <div class="d-flex flex-row justify-content-center h-100 gap-5 p-3">
-            <div class="d-flex flex-column justify-content-center align-items-center border w-25 rounded-2" >
-                <i class="bi-house-lock text-success" style="font-size:6rem;" ></i>
+    <div class="container-fluid py-5 d-flex flex-column border" style="height: auto;">
+        <h1 class="fw-bold text-dark text-center mb-3">Why Choose Real Estate as an Investment?</h1>
+        <div class="row d-flex justify-content-center align-items-center gap-5 p-3">
+            <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center border rounded-2">
+                <i class="bi-house-lock text-success" style="font-size:6rem;"></i>
                 <p class="fw-bold">Secure Investment</p>
             </div>
-            <div class="d-flex flex-column justify-content-center align-items-center border w-25 rounded-2" >
-                <i class="bi-currency-dollar text-success" style="font-size:6rem;"  ></i>
+            <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center border rounded-2">
+                <i class="bi-currency-dollar text-success" style="font-size:6rem;"></i>
                 <p class="fw-bold">Steady Cash Flow</p>
             </div>
-            <div class="d-flex flex-column justify-content-center align-items-center border w-25 rounded-2" >
-                <i class="bi-gear text-success" style="font-size:6rem;"  ></i>
+            <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center border rounded-2">
+                <i class="bi-gear text-success" style="font-size:6rem;"></i>
                 <p class="fw-bold">Control Over Investment</p>
             </div>
         </div>
