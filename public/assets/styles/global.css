@@ -35,25 +35,16 @@
   background-position: center; /* Centers the image */
   background-repeat: no-repeat;
 }
-* .homeContainer .introContainer .left {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-* .homeContainer .introContainer .left label {
-  font-size: 4rem;
-  font-weight: bold;
-  color: white;
-  letter-spacing: 0.2rem;
-}
-* .homeContainer .introContainer .left label .customHouse {
-  font-size: 5rem;
-  font-family: Arial, sans-serif;
-  font-weight: bolder;
-  background: linear-gradient(135deg, yellow 50%, white 50%);
-  -webkit-background-clip: text; /* Chrome and Safari */
-  background-clip: text; /* Standard syntax for background clip */
-  color: transparent; /* Make the text color transparent */
+* .homeContainer .introContainer::before {
+  height: 103.5vh;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1; /* Ensure the overlay is on top of the background */
 }
 * .homeContainer .greetContainer {
   background-color: #E5E6E6;
@@ -67,30 +58,6 @@
 }
 * .homeContainer .greetContainer h2 {
   font-weight: bolder;
-}
-* .homeContainer .popoularHouseContainer {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 0;
-  gap: 4rem;
-  background-color: #E5E6E6;
-}
-* .homeContainer .popoularHouseContainer h1 {
-  font-weight: bold;
-}
-* .homeContainer .popoularHouseContainer .productContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 6rem;
-  padding: 3rem 6rem;
-}
-* .homeContainer .popoularHouseContainer .productContainer img {
-  width: 15rem;
-  height: 15rem;
-  border-radius: 10px;
 }
 
 .admin-header {
