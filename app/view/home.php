@@ -29,6 +29,28 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid p-5 border">
+        <div class="row">
+            <div class="col-md-6">
+                <iframe 
+                    src="https://www.youtube.com/embed/Fr0MFISQSFw?si=oJ17zGiFYQXRqMVS" 
+                    title="YouTube video player" 
+                    class="embed-responsive-item" 
+                    style="width: 100%; height: 315px;" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="col-md-6 ps-4">
+                <h2>Scott Rechler on the Future of Commercial Real Estate</h2>
+                <p>
+                    In this insightful video, RXR CEO Scott Rechler discusses the evolving landscape of commercial real estate amid shifting economic conditions. He explores the implications of potential rate cuts and the Federal Reserve's uncertain stance on interest rates. Tune in to gain valuable perspectives on navigating this new paradigm in real estate!
+                </p>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid pt-5">
         <h1 class="text-center display-6 fw-bold mb-5">New Listing</h1>
         <div class="row d-flex justify-content-center align-items-center gap-5 p-4">
