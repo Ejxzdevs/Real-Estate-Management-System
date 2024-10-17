@@ -4,25 +4,17 @@
     $products = $fetchproducts->recentProducts(6);
 ?>
 <div class="homeContainer">
-    <div class="introContainer row ">
-        <div class="col-md-6 left">
-            <label>Find Your Dream <br><span class="customHouse">House</span></label>
-        </div>
-        <div class="col-md-6">
-            <h2></h2>
-        </div>
-    </div>
-    <div class="greetContainer">
-        <h2> Welcome to Real Estate Management Solution</h2>
-        <div>
-            <p>
+    <div class="introContainer d-flex justify-content-center align-items-center">
+        <div class="d-flex justify-content-center align-items-center flex-column gap-5 w-75 h-100 z-3">
+            <h1 class="fw-bold text-white text-align-center" > Welcome to Real Estate Management Solution</h1>
+            <p class="text-white" >
                 In the fast-paced world of real estate, managing properties, clients, and transactions can be a complex task. [Your System's Name] is designed to simplify and streamline the process for real estate professionals. Whether you're managing residential or commercial properties, our system offers a user-friendly platform to oversee all aspects of real estate management, from property listings and client databases to contract management and financial tracking
             </p>
         </div>
     </div>
-    <div class="container-fluid">
-        <h1 class="text-center display-6" >New Listing</h1>
-        <div class="row d-flex justify-content-center align-items-center gap-5 bg-secondary p-4">
+    <div class="container-fluid pt-3">
+        <h1 class="text-center display-6 fw-bold">New Listing</h1>
+        <div class="row d-flex justify-content-center align-items-center gap-5 p-4">
             <!-- First Item -->
             <?php foreach($products as $product): ?>
                 <div class="card border d-flex flex-row p-0 " style="height: 200px; width: 550px; cursor: pointer; " >

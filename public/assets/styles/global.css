@@ -43,21 +43,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
-  z-index: 1; /* Ensure the overlay is on top of the background */
-}
-* .homeContainer .greetContainer {
-  background-color: #E5E6E6;
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-  padding: 4rem 5rem;
-}
-* .homeContainer .greetContainer h2 {
-  font-weight: bolder;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 .admin-header {
