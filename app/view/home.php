@@ -6,14 +6,31 @@
 <div class="homeContainer">
     <div class="introContainer d-flex justify-content-center align-items-center">
         <div class="d-flex justify-content-center align-items-center flex-column gap-5 w-75 h-100 z-3">
-            <h1 class="fw-bold text-white text-align-center" > Welcome to Real Estate Management Solution</h1>
+            <h1 class="fw-bold text-white" > Welcome to Real Estate Management Solution</h1>
             <p class="text-white" >
                 In the fast-paced world of real estate, managing properties, clients, and transactions can be a complex task. [Your System's Name] is designed to simplify and streamline the process for real estate professionals. Whether you're managing residential or commercial properties, our system offers a user-friendly platform to oversee all aspects of real estate management, from property listings and client databases to contract management and financial tracking
             </p>
         </div>
     </div>
-    <div class="container-fluid pt-3">
-        <h1 class="text-center display-6 fw-bold">New Listing</h1>
+    <div class="py-5 d-flex flex-column border" style="height: 400px;" >
+        <h1 class="fw-bold text-dark text-center mb-3" >Why Choose Real Estate as an Investment?</h1>
+        <div class="d-flex flex-row justify-content-center h-100 gap-5 p-3">
+            <div class="d-flex flex-column justify-content-center align-items-center border w-25 rounded-2" >
+                <i class="bi-house-lock text-success" style="font-size:6rem;" ></i>
+                <p class="fw-bold">Secure Investment</p>
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center border w-25 rounded-2" >
+                <i class="bi-currency-dollar text-success" style="font-size:6rem;"  ></i>
+                <p class="fw-bold">Steady Cash Flow</p>
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center border w-25 rounded-2" >
+                <i class="bi-gear text-success" style="font-size:6rem;"  ></i>
+                <p class="fw-bold">Control Over Investment</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid pt-5">
+        <h1 class="text-center display-6 fw-bold mb-5">New Listing</h1>
         <div class="row d-flex justify-content-center align-items-center gap-5 p-4">
             <!-- First Item -->
             <?php foreach($products as $product): ?>
