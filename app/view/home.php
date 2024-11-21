@@ -1,5 +1,6 @@
 <?php 
     include "app/http/helper/displayProduct.php";
+    include "app/http/helper/base64.php";
     $fetchproducts = new DisplayProduct();
     $products = $fetchproducts->recentProducts(6);
 ?>
@@ -62,7 +63,10 @@
                         </div>
                         <div class="ps-1 pe-4 d-flex flex-row justify-content-between align-items-center" style="height: 18%;" >
                             <p class="m-0 text-secondary" >₱<?php echo htmlspecialchars($product['price']); ?></p>
-                            <a class="btn btn-primary" href="">Inquire</a>
+                            <a class="btn btn-primary" href="app/view/viewProduct.php?id=<?php echo 
+                                Base64IdHelper::safe_encode_id((int)$product['id']); ?>">
+                            Details
+                            </a>
                         </div>
                     </div>
 
