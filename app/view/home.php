@@ -50,19 +50,19 @@
             <?php foreach($products as $product): ?>
                 <div class="card border d-flex flex-row p-0 " style="height: 200px; width: 550px; cursor: pointer; " >
                     <div class="border p-1" style="width: 50%;" >
-                        <img class="h-100 rounded-3" src="public/images/products/<?php echo $product['image']; ?>" alt="">
+                        <img class="h-100 rounded-3" src="public/images/products/<?php echo htmlspecialchars($product['image']); ?>" alt="">
                     </div>
                     <div class="d-flex flex-column ps-2" style="width: 60%;" >
                         <div class="d-flex flex-column m-0 p-0" style="height: auto;" >
-                            <p class="m-0 fw-bold fs-6"><?php echo $product['name']; ?></p>
-                            <p class="m-0 text-secondary" style="font-size: 10px;" ><i class="bi bi-geo-alt"></i><?php echo $product['address']; ?></p>
+                            <p class="m-0 fw-bold fs-6"><?php echo htmlspecialchars($product['name']); ?></p>
+                            <p class="m-0 text-secondary" style="font-size: 10px;" ><i class="bi bi-geo-alt"></i><?php echo htmlspecialchars($product['address']); ?></p>
                         </div>
                         <div class="ps-1 pe-2  py-0" style="height: 59%;">
-                            <p class="mt-4 mx-0 text-wrap" style="font-size: 10px;" ><?php echo $product['description']; ?></p>
+                            <p class="mt-4 mx-0 text-wrap" style="font-size: 10px;" ><?php echo htmlspecialchars($product['description']); ?></p>
                         </div>
                         <div class="ps-1 pe-4 d-flex flex-row justify-content-between align-items-center" style="height: 18%;" >
-                            <p class="m-0 text-secondary" >₱<?php echo $product['price']; ?></p>
-                            <b class="btn btn-primary" >Inquire</b>
+                            <p class="m-0 text-secondary" >₱<?php echo htmlspecialchars($product['price']); ?></p>
+                            <a class="btn btn-primary" href="">Inquire</a>
                         </div>
                     </div>
 
