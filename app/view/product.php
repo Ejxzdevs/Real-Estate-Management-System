@@ -30,8 +30,8 @@ $csrf_token = CsrfHelper::generateToken();
         background-color: #f1f1f1;
     }
     .table img {
-        height: 3rem;
-        width: 4rem;
+        height: 5rem;
+        width: 6rem;
         border-radius: 4px;
     }
     .table-container {
@@ -48,19 +48,20 @@ $csrf_token = CsrfHelper::generateToken();
         
     }
     .table-actions {
-        height: 5rem;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         border-width: 0;
         gap:2rem;
+       
     }
     .table-actions .edit {
         color: blue;
     }
     .table-actions .delete {
         color:crimson;
+        border: none;
     }
    
 </style>
@@ -92,7 +93,7 @@ $csrf_token = CsrfHelper::generateToken();
                         <td><?php echo htmlspecialchars($product['address']); ?></td>
                         <td><?php echo htmlspecialchars($product['price']); ?></td>
                         <td><?php echo htmlspecialchars($product['status']); ?></td>
-                        <td class="table-actions">
+                        <td><div class="table-actions">
                         <a href="#" 
                                onclick="
                                 document.getElementById('updatePropertyID').value = '<?php echo htmlspecialchars($product['id']); ?>';
@@ -114,6 +115,7 @@ $csrf_token = CsrfHelper::generateToken();
                                         <i class="bi bi-trash3"></i>
                                     </button>
                                 </form>
+                                </div>
                         </td>
                     </tr>
                 <?php endforeach; ?>
