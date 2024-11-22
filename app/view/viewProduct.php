@@ -36,32 +36,28 @@ if ($encodedId) {
             box-sizing: border-box;
             background-color: #ffffff;
         }
-        .custom{
-           
-          
-        }
-
-        .custom .custom-card  {
-            padding: 20px 5px;
-            width: 400px;
+       .custom-card  {
+            padding: 20px 10px;
+            width: 600px;
             display: flex;
             flex-direction: column;
             gap: 4px;
             cursor: pointer;
+            background-color: #ffffff;
         }
 
-        .custom .custom-card .card-header{
+        .custom-card .card-header{
             height: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .custom .custom-card .card-header p{
+        .custom-card .card-header p{
             font-size: 12px;
         }
 
-        .custom .custom-card .card-header .status {
+        .custom-card .card-header .status {
             width: auto; 
             height: 1.3rem ;
             display: flex;
@@ -74,14 +70,14 @@ if ($encodedId) {
         }
         
 
-        .custom .custom-card  img {
-            height: 200px;
+        .custom-card  img {
+            height: 300px;
         }
        
     </style>
 </head>
 <body>
-    <div class="container-fluid custom h-100 d-flex justify-content-center align-items-center">
+    <div class="container-fluid h-100 d-flex justify-content-center align-items-center">
     <?php foreach($details as $detail): ?>
         <div class="card custom-card border h-auto shadow"  >
             <div class="card-header px-2 m-0">
@@ -106,9 +102,20 @@ if ($encodedId) {
             </div>
             <div class="ps-1 pe-2 d-flex flex-row justify-content-between align-items-center" style="height: 18%;" >
                 <p class="m-0 text-secondary" >₱<?php echo htmlspecialchars($detail['price']); ?></p>
-                <a class="btn btn-primary" style="font-size: 10px;">
+                <?php 
+                    if ($detail['status'] == "sold") {
+                        echo '
+                        <a class="btn btn-secondary" style="font-size: 10px;">
                             Inquires
-                </a>
+                        </a>';
+                    } else {
+                         echo ' 
+                         <a class="btn btn-primary" style="font-size: 10px;">
+                            Inquires
+                        </a>';
+                    }
+                ?>
+               
             </div>
             
     
