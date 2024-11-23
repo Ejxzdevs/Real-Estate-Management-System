@@ -23,7 +23,7 @@
                     <a class="nav-link text-light active" aria-current="page" href="?route=home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light " href="?route=product">Rent</a>
+                    <a class="nav-link text-light " href="?route=rent">Rent</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light " href="#">Buy</a>
