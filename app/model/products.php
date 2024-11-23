@@ -2,15 +2,14 @@
 require_once "../../http/helper/connectHelper.php";
 
 class Products extends MySQL {
-    public function addProduct($name, $description, $address, $price, $status, $type , $image) {
+    public function addProduct($name, $description, $address, $price, $type , $image) {
         try {
-            $stmt = parent::openConnection()->prepare("INSERT INTO properties (name, description, address, price, status,transaction_type, image) VALUES (:name, :description, :address, :price, :status,:type, :image)");
+            $stmt = parent::openConnection()->prepare("INSERT INTO properties (name, description, address, price,transaction_type, image) VALUES (:name, :description, :address, :price,:type, :image)");
 
             $stmt->bindParam(':name', $name);
             $stmt->bindParam(':description', $description);
             $stmt->bindParam(':address', $address);
             $stmt->bindParam(':price', $price);
-            $stmt->bindParam(':status', $status);
             $stmt->bindParam(':type', $type);
             $stmt->bindParam(':image', $image);
             $stmt->execute();
