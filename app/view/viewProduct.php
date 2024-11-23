@@ -37,6 +37,19 @@ if ($encodedId) {
             background-color: #ffffff;
         }
 
+        .backContainer {
+            width: 600px;
+            height: 50px;
+            display: flex;
+            justify-content: end;
+            align-items:center;
+            padding-right: 1rem;
+        }
+
+        .backContainer i {
+            font-size: 50px;
+        }
+
         .custom-card {
             padding: 20px 10px;
             width: 600px;
@@ -75,7 +88,10 @@ if ($encodedId) {
     </style>
 </head>
 <body>
-    <div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+    <div class="container-fluid h-100 d-flex flex-column gap-3 justify-content-center align-items-center">
+        <div class="backContainer">
+            <a href="../../index.php"><i class="bi bi-box-arrow-left text-secondary"></i></a>
+        </div>
     <?php foreach($details as $detail): ?>
         <div class="card custom-card border h-auto shadow">
             <div class="card-header px-2 m-0">
