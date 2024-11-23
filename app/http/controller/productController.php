@@ -43,7 +43,6 @@ class ProductsController {
         $imageName = $this->validateFile($file);
         return $this->model->addProduct($sanitizedData['propertyName'], $sanitizedData['propertyDescription'], 
                                          $sanitizedData['propertyAddress'], $sanitizedData['propertyPrice'], 
-                                         $sanitizedData['propertyStatus'],
                                          $sanitizedData['transactionType'],
                                         $imageName
                                         );
