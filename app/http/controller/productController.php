@@ -43,7 +43,10 @@ class ProductsController {
         $imageName = $this->validateFile($file);
         return $this->model->addProduct($sanitizedData['propertyName'], $sanitizedData['propertyDescription'], 
                                          $sanitizedData['propertyAddress'], $sanitizedData['propertyPrice'], 
-                                         $sanitizedData['propertyStatus'], $imageName);
+                                         $sanitizedData['propertyStatus'],
+                                         $sanitizedData['transactionType'],
+                                        $imageName
+                                        );
     }
 
     public function updateProduct($data, $file) {
@@ -56,7 +59,9 @@ class ProductsController {
 
         return $this->model->updateProduct($sanitizedData['id'], $sanitizedData['propertyName'], 
                                             $sanitizedData['propertyDescription'], $sanitizedData['propertyAddress'], 
-                                            $sanitizedData['propertyPrice'], $sanitizedData['propertyStatus'], $imageName);
+                                            $sanitizedData['propertyPrice'], $sanitizedData['propertyStatus'],
+                                            $sanitizedData['transactionType'],
+                                            $imageName);
     }
 
     public function deleteProduct($data) {
