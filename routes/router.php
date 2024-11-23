@@ -16,7 +16,6 @@ if (isset($_SESSION['user_type'])) {
     }
 }
 
-// Check if the request is a GET request
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $uri = parse_url($_SERVER['REQUEST_URI']);
     
