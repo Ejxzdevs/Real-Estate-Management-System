@@ -102,6 +102,7 @@ $csrf_token = CsrfHelper::generateToken();
                                 document.getElementById('updatePropertyAddress').value = '<?php echo htmlspecialchars($product['address']); ?>';
                                 document.getElementById('updatePropertyPrice').value = '<?php echo htmlspecialchars($product['price']); ?>';
                                 document.getElementById('updatePropertyStatus').value = '<?php echo htmlspecialchars($product['status']); ?>';
+                                document.getElementById('updateTransactionType').value = '<?php echo htmlspecialchars($product['transaction_type']); ?>';
                                 document.getElementById('updatePropertyImage').value = '<?php echo htmlspecialchars($product['image']); ?>';
                                 document.getElementById('imagePreview').src = 'public/images/products/<?php echo htmlspecialchars($product['image']); ?>';
                                 document.getElementById('imagePreview').style.display = 'block';
@@ -162,8 +163,20 @@ $csrf_token = CsrfHelper::generateToken();
                         </select>
                     </div>
                     <div class="mb-3">
+                        <label for="transactionType" class="form-label">Transaction Type</label>
+                        <select class="form-select" name="transactionType" id="transactionType" required>
+                            <option value="" disabled selected>Select status</option>
+                            <option value="sell">Sell</option>
+                            <option value="rent">Rent</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label for="propertyImage" class="form-label">Upload Image</label>
-                        <input type="file" name="propertyImage" class="form-control" id="propertyImage" accept="image/*" required>
+                        <input type="file" name="propertyImage" class="form-control" id="propertyImage" accept="image/*" onchange="previewImage(event)" required>
+                    </div>
+                    <div class="mb-3">
+                        <img id="imagePreview" src="" alt="Image Preview" style="display: none; max-width: 100%; height: auto;">
+                        <input type="hidden" name="prePropertyImage" class="form-control" id="updatePropertyImage" accept="image/*" >
                     </div>
                 </form>
             </div>
@@ -211,6 +224,14 @@ $csrf_token = CsrfHelper::generateToken();
                             <option value="available">Available</option>
                             <option value="sold">Sold</option>
                             <option value="pending">Pending</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateTransactionType" class="form-label">Transaction Type</label>
+                        <select class="form-select" name="transactionType" id="updateTransactionType" required>
+                            <option value="" disabled selected>Select status</option>
+                            <option value="sell">Sell</option>
+                            <option value="rent">Rent</option>
                         </select>
                     </div>
                     <div class="mb-3">
