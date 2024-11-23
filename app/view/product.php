@@ -163,14 +163,6 @@ $csrf_token = CsrfHelper::generateToken();
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="transactionType" class="form-label">Transaction Type</label>
-                        <select class="form-select" name="transactionType" id="transactionType" required>
-                            <option value="" disabled selected>Select status</option>
-                            <option value="sell">Sell</option>
-                            <option value="rent">Rent</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
                         <label for="propertyImage" class="form-label">Upload Image</label>
                         <input type="file" name="propertyImage" class="form-control" id="propertyImage" accept="image/*" onchange="previewImage(event)" required>
                     </div>
