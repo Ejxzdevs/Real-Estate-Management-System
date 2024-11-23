@@ -45,7 +45,7 @@ class Products extends MySQL {
 
     public function deleteProduct($id) {
         try {
-            $stmt = parent::openConnection()->prepare("DELETE FROM properties WHERE id = :id");
+            $stmt = parent::openConnection()->prepare("UPDATE properties SET is_deleted = 1 WHERE id = :id");
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
             return 200;
