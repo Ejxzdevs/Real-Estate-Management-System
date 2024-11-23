@@ -26,13 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Check route
         $route = isset($queryParams['route']) ? htmlspecialchars($queryParams['route']) : null;
         
-       
         // Check if the route exists
         if (array_key_exists($route, $routes)) {
             $page = 'app/view/' . $routes[$route]; // Ensure the path is correct
         } else {
             // Trigger custom "page not found" handling
-            $page = 'app/view/404.php'; // Include a custom 404 error page
+            $page = 'app/view/404.php';
         }
     }
 }
