@@ -6,7 +6,7 @@ $data = $Inquiries->getAllInquiries();
 <div class="d-flex flex-column p-4">
     <div class="d-flex flex-row justify-content-between w-100 h-100 mb-2">
         <h5 class="mt-3">Inquiry</h5>
-        <button class="btn btn-primary me-3" style="width: 120px; height: 2.5rem;" data-bs-toggle="modal" data-bs-target="#addProperty">ADD</button>
+        
     </div>
     <div class="table-container">
         <table class="table align-middle mb-0 bg-white p-3 ">
