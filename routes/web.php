@@ -4,6 +4,7 @@ return [
     'home' => 'home.php',
     'product' => 'product.php',
     'dashboard' => 'dashboard.php',
-    'rent' => 'rent.php',
+    'properties' => 'properties.php',
+    'inquiry' => 'inquiry.php',
 ];
 
