@@ -16,7 +16,7 @@
                 <i class="bi bi-question-circle"></i><a href="?route=inquiry">Inquiries</a>
             </li>
             <li>
-                <i class="bi bi-box"></i><a href="">Inventory</a>
+                <i class="bi bi-box"></i><a href="?route=inventory">Inventory</a>
             </li>
             <li>
                 <i class="bi bi-file-earmark-text"></i><a href="" >Reports</a>
