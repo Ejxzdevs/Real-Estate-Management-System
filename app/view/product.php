@@ -4,68 +4,7 @@ require_once 'app/http/helper/displayProduct.php';
 $products = new DisplayProduct();
 $data = $products->getAllProducts();
 $csrf_token = CsrfHelper::generateToken();
-
-
-
 ?>
-
-<style>
-    .table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    .table th, .table td {
-        padding: 8px;
-        border: 1px solid #dee2e6;
-        text-align:center;
-    }
-    .table th {
-        background-color: #f8f9fa;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        width: 200px;
-    }
-    .table tbody tr:hover {
-        background-color: #f1f1f1;
-    }
-    .table img {
-        height: 5rem;
-        width: 6rem;
-        border-radius: 4px;
-    }
-    .table-container {
-        max-height: 70vh; 
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-    .table td {
-        word-wrap: break-word; 
-        overflow-wrap: break-word; 
-        max-width: 200px;
-     
-
-        
-    }
-    .table-actions {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        border-width: 0;
-        gap:2rem;
-       
-    }
-    .table-actions .edit {
-        color: blue;
-    }
-    .table-actions .delete {
-        color:crimson;
-        border: none;
-    }
-   
-</style>
-
 <div class="d-flex flex-column p-4">
     <div class="d-flex flex-row justify-content-between w-100 h-100 mb-2">
         <h5 class="mt-3">Products</h5>
