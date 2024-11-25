@@ -13,7 +13,10 @@
                 <i class="bi bi-house"></i><a href="?route=product">Property</a>
             </li>
             <li>
-                <i class="bi bi-question-circle"></i><a href="?route=product">Inquiries</a>
+                <i class="bi bi-question-circle"></i><a href="?route=inquiry">Inquiries</a>
+            </li>
+            <li>
+                <i class="bi bi-box"></i><a href="">Inventory</a>
             </li>
             <li>
                 <i class="bi bi-file-earmark-text"></i><a href="" >Reports</a>
