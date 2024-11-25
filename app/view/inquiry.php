@@ -14,9 +14,8 @@ $data = $Inquiries->getAllInquiries();
                 <tr>
                     <th>id</th>
                     <th>name</th>
-                    <th>number</th>
                     <th>email</th>
-                    <th>message</th>
+                    <th>number</th>
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
@@ -28,12 +27,17 @@ $data = $Inquiries->getAllInquiries();
                         <td><?php echo htmlspecialchars($inquiry['inquiry_name']); ?></td>
                         <td><?php echo htmlspecialchars($inquiry['inquiry_email']); ?></td>
                         <td><?php echo htmlspecialchars($inquiry['inquiry_number']); ?></td>
-                        <td><?php echo htmlspecialchars($inquiry['inquiry_message']); ?></td>
                         <td><?php echo htmlspecialchars($inquiry['inquiry_status']); ?></td>
                         <td>
                             <div class="table-actions">
-            
-                              
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#viewInquiry"
+                                onclick="
+                                document.getElementById('email').textContent = '<?php echo htmlspecialchars($inquiry['inquiry_email']); ?>';
+                                document.getElementById('name').value = '<?php echo htmlspecialchars($inquiry['inquiry_name']); ?>';
+                                document.getElementById('message').value = '<?php echo htmlspecialchars($inquiry['inquiry_message']); ?>';
+                               "
+                                
+                                ><i class="bi bi-envelope"></i></a>
                             </div>
                         </td>
                     </tr>
@@ -46,65 +50,28 @@ $data = $Inquiries->getAllInquiries();
 
 
 <!-- View Modal -->
-<div class="modal fade" id="updateProperty" tabindex="-1" aria-labelledby="updateProperty" aria-hidden="true">
+<div class="modal fade" id="viewInquiry" tabindex="-1" aria-labelledby="viewInquiry" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Update Property</h5>
+                <h5 class="modal-title" style="font-size: 14px;" >Email From: <span id="email" style="font-size: 14px;"></span></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="app/http/controller/productController.php" method="POST" id="updatePropertyForm" enctype="multipart/form-data">
-                    <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
-                    <input type="hidden" name="update">
-                    <input type="hidden" name="id" class="form-control" id="updatePropertyID" required>
                     <div class="mb-3">
-                        <label for="updatePropertyName" class="form-label">Property Name</label>
-                        <input type="text" name="propertyName" class="form-control" id="updatePropertyName" required>
+                        <label for="updatePropertyName" class="form-label">Client Name</label>
+                        <input type="text" name="propertyName" class="form-control" id="name" disabled>
                     </div>
                     <div class="mb-3">
-                        <label for="updatePropertyDescription" class="form-label">Description</label>
-                        <textarea name="propertyDescription" class="form-control" id="updatePropertyDescription" rows="3" required></textarea>
+                        <label for="updatePropertyDescription" class="form-label">Message</label>
+                        <textarea name="propertyDescription" class="form-control" id="message" rows="3" disabled></textarea>
                     </div>
-                    <div class="mb-3">
-                        <label for="updatePropertyAddress" class="form-label">Address</label>
-                        <input type="text" name="propertyAddress" class="form-control" id="updatePropertyAddress" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="updatePropertyPrice" class="form-label">Price</label>
-                        <input type="text" name="propertyPrice" class="form-control" id="updatePropertyPrice" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="updatePropertyStatus" class="form-label">Status</label>
-                        <select class="form-select" name="propertyStatus" id="updatePropertyStatus" required>
-                            <option value="" disabled selected>Select status</option>
-                            <option value="available">Available</option>
-                            <option value="sold">Sold</option>
-                            <option value="pending">Pending</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="updateTransactionType" class="form-label">Transaction Type</label>
-                        <select class="form-select" name="transactionType" id="updateTransactionType" required>
-                            <option value="" disabled selected>Select status</option>
-                            <option value="sell">Sell</option>
-                            <option value="rent">Rent</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Update Image</label>
-                        <input type="file" name="propertyImage" class="form-control" accept="image/*" onchange="previewImage(event)">
-                    </div>
-                    <div class="mb-3">
-                        <img id="imagePreview" src="" alt="Image Preview" style="display: none; max-width: 100%; height: auto;">
-                        <input type="hidden" name="prePropertyImage" class="form-control" id="updatePropertyImage" accept="image/*" >
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" form="updatePropertyForm">Update Property</button>
-            </div>
         </div>
     </div>
 </div>
+<script>
+    function view(){
+
+    }
+</script>
