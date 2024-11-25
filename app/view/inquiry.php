@@ -34,9 +34,7 @@ $data = $Inquiries->getAllInquiries();
                                 document.getElementById('email').textContent = '<?php echo htmlspecialchars($inquiry['inquiry_email']); ?>';
                                 document.getElementById('name').value = '<?php echo htmlspecialchars($inquiry['inquiry_name']); ?>';
                                 document.getElementById('message').value = '<?php echo htmlspecialchars($inquiry['inquiry_message']); ?>';
-                               "
-                                
-                                ><i class="bi bi-envelope"></i></a>
+                               "><i class="bi bi-envelope"></i></a>
                             </div>
                         </td>
                     </tr>
@@ -57,20 +55,15 @@ $data = $Inquiries->getAllInquiries();
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="app/http/controller/productController.php" method="POST" id="updatePropertyForm" enctype="multipart/form-data">
-                    <div class="mb-3">
-                        <label for="updatePropertyName" class="form-label">Client Name</label>
-                        <input type="text" name="propertyName" class="form-control" id="name" disabled>
-                    </div>
-                    <div class="mb-3">
-                        <label for="updatePropertyDescription" class="form-label">Message</label>
-                        <textarea name="propertyDescription" class="form-control" id="message" rows="3" disabled></textarea>
-                    </div>
+                <div class="mb-3">
+                    <label for="updatePropertyName" class="form-label">Client Name</label>
+                    <input type="text" name="propertyName" class="form-control" id="name" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="updatePropertyDescription" class="form-label">Message</label>
+                    <textarea name="propertyDescription" class="form-control" id="message" rows="3" disabled></textarea>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<script>
-    function view(){
-
-    }
-</script>
