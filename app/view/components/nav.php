@@ -23,10 +23,10 @@
                     <a class="nav-link text-light active" aria-current="page" href="?route=home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light " href="?route=rent">Rent</a>
+                    <a class="nav-link text-light " href="?route=properties">Properties</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light " href="#">Buy</a>
+                    <a class="nav-link text-light " href="#">News</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light " href="#" tabindex="-1" aria-disabled="true">About</a>
