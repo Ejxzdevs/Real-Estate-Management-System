@@ -16,7 +16,6 @@ $csrf_token = CsrfHelper::generateToken();
                 <tr>
                     <th>Image</th>
                     <th>Product</th>
-                    <th>Description</th>
                     <th>Location</th>
                     <th>Price</th>
                     <th>Status</th>
@@ -28,7 +27,6 @@ $csrf_token = CsrfHelper::generateToken();
                     <tr>
                         <td><img src="public/images/products/<?php echo htmlspecialchars($product['image']); ?>" alt="Product Image"></td>
                         <td><?php echo htmlspecialchars($product['name']); ?></td>
-                        <td><?php echo htmlspecialchars($product['description']); ?></td>
                         <td><?php echo htmlspecialchars($product['address']); ?></td>
                         <td><?php echo htmlspecialchars($product['price']); ?></td>
                         <td><?php echo htmlspecialchars($product['status']); ?></td>
@@ -43,8 +41,8 @@ $csrf_token = CsrfHelper::generateToken();
                                 document.getElementById('updatePropertyStatus').value = '<?php echo htmlspecialchars($product['status']); ?>';
                                 document.getElementById('updateTransactionType').value = '<?php echo htmlspecialchars($product['transaction_type']); ?>';
                                 document.getElementById('updatePropertyImage').value = '<?php echo htmlspecialchars($product['image']); ?>';
-                                document.getElementById('imagePreview').src = 'public/images/products/<?php echo htmlspecialchars($product['image']); ?>';
-                                document.getElementById('imagePreview').style.display = 'block';
+                                document.getElementById('imageUpdatePreview').src = 'public/images/products/<?php echo htmlspecialchars($product['image']); ?>';
+                                document.getElementById('imageUpdatePreview').style.display = 'block';
                                "
                                data-bs-toggle="modal" data-bs-target="#updateProperty" class="edit" ><i class="bi bi-pencil-square"></i></a>
                                <form action="app/http/controller/productController.php" method="POST" style="display: inline;">
@@ -170,7 +168,7 @@ $csrf_token = CsrfHelper::generateToken();
                         <input type="file" name="propertyImage" class="form-control" accept="image/*" onchange="previewImage(event)">
                     </div>
                     <div class="mb-3">
-                        <img id="imagePreview" src="" alt="Image Preview" style="display: none; max-width: 100%; height: auto;">
+                        <img id="imageUpdatePreview" src="" alt="Image Preview" style="display: none; max-width: 100%; height: auto;">
                         <input type="hidden" name="prePropertyImage" class="form-control" id="updatePropertyImage" accept="image/*" >
                     </div>
                 </form>
