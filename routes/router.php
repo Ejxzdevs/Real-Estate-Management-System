@@ -16,6 +16,7 @@ if (isset($_SESSION['user_type'])) {
     }
 }
 
+// Check if the request is a GET request
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $uri = parse_url($_SERVER['REQUEST_URI']);
     
@@ -26,12 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Check route
         $route = isset($queryParams['route']) ? htmlspecialchars($queryParams['route']) : null;
         
+       
         // Check if the route exists
         if (array_key_exists($route, $routes)) {
             $page = 'app/view/' . $routes[$route]; // Ensure the path is correct
         } else {
             // Trigger custom "page not found" handling
-            $page = 'app/view/404.php';
+            $page = 'app/view/404.php'; // Include a custom 404 error page
         }
     }
 }
