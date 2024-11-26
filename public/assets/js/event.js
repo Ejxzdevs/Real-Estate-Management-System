@@ -20,49 +20,32 @@ function previewImage(event) {
 }
 
 // inventory
-
-let selectedPrice = 0; // Initialize the selected price variable
+let selectedPrice = 0;
+let selectedUpdatePrice = 0;
 
 function updatePrice(selectElement) {
     // Get the selected option
     var selectedOption = selectElement.options[selectElement.selectedIndex];
-    
-    // Retrieve the price using the 'data-price' attribute
     selectedPrice = parseFloat(selectedOption.getAttribute('data-price'));
-    
-    // Set the price to the input field with ID "Price"
     document.getElementById('Price').value = selectedPrice;
-
-    // Reset the change field whenever the price is updated
     document.getElementById('change').value = '';
-
-    // Hide error message and enable the submit button
-    document.getElementById('amount-error').style.display = 'none';
-    document.getElementById('submit-button').disabled = false;
-
-    console.log('Selected price:', selectedPrice);
 }
 
 function calculateChange() {
-    // Get the amount entered by the user
     var amount = parseFloat(document.getElementById('amount').value);
+    var change = amount - selectedPrice;
+    document.getElementById('change').value = change.toFixed(2);
+}
 
-    if (!isNaN(amount) && amount >= selectedPrice) {
-        // Calculate the change if the amount is greater than or equal to the price
-        var change = amount - selectedPrice;
+function updateInventoryPrice(selectElement) {
+    var selectedUpdateOption = selectElement.options[selectElement.selectedIndex];
+    selectedUpdatePrice = parseFloat(selectedUpdateOption.getAttribute('data-price'));
+    document.getElementById('updatePrice').value = selectedUpdatePrice;
+    document.getElementById('updateChange').value = '';
+}
 
-        // Display the change in the "change" field
-        document.getElementById('change').value = change;
-
-        // Hide the error message and enable the submit button
-        document.getElementById('amount-error').style.display = 'none';
-        document.getElementById('submit-button').disabled = false;
-    } else {
-        // If the amount is less than the price, clear the change field and show error message
-        document.getElementById('change').value = '';
-
-        // Show error message and disable the submit button
-        document.getElementById('amount-error').style.display = 'block';
-        document.getElementById('submit-button').disabled = true;
-    }
+function calculateUpdateChange() {
+    let amountUpdate = parseFloat(document.getElementById('updateAmount').value);
+    let changeUpdate = amountUpdate - selectedUpdatePrice;
+    document.getElementById('updateChange').value = changeUpdate.toFixed(2);
 }
