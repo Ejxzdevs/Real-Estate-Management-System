@@ -35,7 +35,7 @@
             </section>
         </main>
     </div>
-    <script src="public/assets/js/product.js"></script>
-    <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+    <script src="public/assets/js/event.js"></script>
+    <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </html>

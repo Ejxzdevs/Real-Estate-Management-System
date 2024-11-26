@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="public/assets/styles/footer.css">
         <?php require_once "app/view/components/footer.php"; ?>
     </footer>
-     <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+    <script src='public/assets/js/event.js'></script>
+    <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </html>
