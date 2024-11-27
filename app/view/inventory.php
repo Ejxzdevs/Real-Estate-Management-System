@@ -33,7 +33,7 @@ $csrf_token = CsrfHelper::generateToken();
             <tbody>
                 <?php foreach($dataInventory as $list): ?>
                 <tr>
-                    <td><p><?php echo htmlspecialchars($list['id']); ?></p></td>
+                    <td><p><?php echo htmlspecialchars($list['inventory_id']); ?></p></td>
                     <td><p><?php echo htmlspecialchars($list['fullname']); ?></p></td>
                     <td><p><?php echo htmlspecialchars($list['name']); ?></p></td>
                     <td><p><?php echo htmlspecialchars($list['contact']); ?></p></td>
@@ -43,10 +43,11 @@ $csrf_token = CsrfHelper::generateToken();
                         <a href="#" 
                            onclick="
                             // Populate input fields with PHP values
+                                                        document.getElementById('inventory_id').value = '<?php echo htmlspecialchars($list['inventory_id']); ?>';
                             document.getElementById('Updatefullname').value = '<?php echo htmlspecialchars($list['fullname']); ?>';
                             document.getElementById('Updatecontact').value = '<?php echo htmlspecialchars($list['contact']); ?>';
                             document.getElementById('client_address').value = '<?php echo htmlspecialchars($list['inventory_address']); ?>';
-                            document.getElementById('property_id').value = '<?php echo htmlspecialchars($list['property_id']); ?>';
+                            document.getElementById('updateProperty_id').value = '<?php echo htmlspecialchars($list['property_id']); ?>';
                             document.getElementById('updatePropertyImage').value = '<?php echo htmlspecialchars($list['image']); ?>';
                             document.getElementById('imageUpdatePreview').src = 'public/images/products/<?php echo htmlspecialchars($list['image']); ?>';
                             document.getElementById('imageUpdatePreview').style.display = 'block';
@@ -132,7 +133,7 @@ $csrf_token = CsrfHelper::generateToken();
                     </div>
                     <div class="mb-3">
                         <label for="change" class="form-label">Change</label>
-                        <input type="number" name="change" class="form-control" id="change" disabled>
+                        <input type="number" name="change" class="form-control" id="change">
                     </div>
                     <div class="mb-3">
                         <label for="remark" class="form-label">Remark</label>
@@ -159,6 +160,7 @@ $csrf_token = CsrfHelper::generateToken();
             <div class="modal-body">
                 <form action="app/http/controller/inventoryController.php" method="POST" id="updateInventoryForm" enctype="multipart/form-data">
                     <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
+                    <input type="hidden" name="inventory_id" id="inventory_id">
                     <input type="hidden" name="update">
                     <div class="mb-3">
                         <label for="fullname" class="form-label">Full Name</label>
@@ -169,12 +171,12 @@ $csrf_token = CsrfHelper::generateToken();
                         <input type="text" name="contact" class="form-control" id="Updatecontact" required>
                     </div>
                     <div class="mb-3">
-                        <label for="client" class="form-label">Client Address</label>
-                        <input type="text" name="client" class="form-control" id="client_address" required>
+                        <label for="client_address" class="form-label">Client Address</label>
+                        <input type="text" name="client_address" class="form-control" id="client_address" required>
                     </div>
                     <div class="mb-3">
                         <label for="property_id" class="form-label">Select Properties</label>
-                        <select class="form-select" name="property_id" id="property_id" onchange="updateInventoryPrice(this);" required>
+                        <select class="form-select" name="property_id" id="updateProperty_id" onchange="updateInventoryPrice(this);" >
                             <option value="" disabled selected>Select Property</option>
                             <?php foreach ($data as $product): ?>
                                 <option value="<?php echo $product['id'] ?>" data-price="<?php echo $product['price']; ?>"><?php echo $product['name'] ?></option>
@@ -204,7 +206,7 @@ $csrf_token = CsrfHelper::generateToken();
                     </div>
                     <div class="mb-3">
                         <label for="updateChange" class="form-label">Change</label>
-                        <input type="number" name="updateChange" class="form-control" id="updateChange" disabled>
+                        <input type="number" name="updateChange" class="form-control" id="updateChange">
                     </div>
                     <div class="mb-3">
                         <label for="remark" class="form-label">Remark</label>
@@ -220,34 +222,3 @@ $csrf_token = CsrfHelper::generateToken();
     </div>
 </div>
 
-<script>
-let selectedPrice = 0;
-let selectedUpdatePrice = 0;
-
-function updatePrice(selectElement) {
-    // Get the selected option
-    var selectedOption = selectElement.options[selectElement.selectedIndex];
-    selectedPrice = parseFloat(selectedOption.getAttribute('data-price'));
-    document.getElementById('Price').value = selectedPrice;
-    document.getElementById('change').value = '';
-}
-
-function calculateChange() {
-    var amount = parseFloat(document.getElementById('amount').value);
-    var change = amount - selectedPrice;
-    document.getElementById('change').value = change.toFixed(2);
-}
-
-function updateInventoryPrice(selectElement) {
-    var selectedUpdateOption = selectElement.options[selectElement.selectedIndex];
-    selectedUpdatePrice = parseFloat(selectedUpdateOption.getAttribute('data-price'));
-    document.getElementById('updatePrice').value = selectedUpdatePrice;
-    document.getElementById('updateChange').value = '';
-}
-
-function calculateUpdateChange() {
-    let amountUpdate = parseFloat(document.getElementById('updateAmount').value);
-    let changeUpdate = amountUpdate - selectedUpdatePrice;
-    document.getElementById('updateChange').value = changeUpdate.toFixed(2);
-}
-</script>

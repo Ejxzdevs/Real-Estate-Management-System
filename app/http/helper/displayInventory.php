@@ -6,12 +6,15 @@ class DisplayInventory extends MySQL {
     public function getInventory() {
         try {
             $stmt = parent::openConnection()->prepare("
-            SELECT inventory.*, 
-            Properties.*, 
-            Properties.address AS property_address, 
-            inventory.address AS inventory_address
-            FROM inventory
-            JOIN Properties ON inventory.property_id = Properties.id;; 
+            SELECT 
+    inventory.id AS inventory_id,  -- Alias for inventory's id
+    Properties.id AS property_id,   -- Alias for properties' id
+    inventory.*, 
+    Properties.*, 
+    Properties.address AS property_address, 
+    inventory.address AS inventory_address
+FROM inventory
+JOIN Properties ON inventory.property_id = Properties.id;
             ");
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
