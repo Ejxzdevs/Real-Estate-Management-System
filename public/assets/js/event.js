@@ -1,5 +1,6 @@
 // Product or Properties
 // image preview on product update
+console.log("event.js loaded");
 function previewImage(event) {
     const imagePreview = document.getElementById('imagePreview');
     const file = event.target.files[0];
@@ -19,33 +20,42 @@ function previewImage(event) {
     }
 }
 
-// inventory
-let selectedPrice = 0;
-let selectedUpdatePrice = 0;
+// Inventory
 
-function updatePrice(selectElement) {
+// For Add Modal
+let selectedPrice = 0;
+function getPrice(selectElement) {
     // Get the selected option
-    var selectedOption = selectElement.options[selectElement.selectedIndex];
+    let selectedOption = selectElement.options[selectElement.selectedIndex];
     selectedPrice = parseFloat(selectedOption.getAttribute('data-price'));
     document.getElementById('Price').value = selectedPrice;
     document.getElementById('change').value = '';
-}
 
+    let image = selectedOption.getAttribute('data-image');
+    document.getElementById('imagePreview').src = 'public/images/products/' + image;
+    document.getElementById('imagePreview').style.display = 'block';
+}
 function calculateChange() {
-    var amount = parseFloat(document.getElementById('amount').value);
-    var change = amount - selectedPrice;
-    document.getElementById('change').value = change.toFixed(2);
+    let amount = parseFloat(document.getElementById('amount').value);
+    let change = amount - selectedPrice;
+    document.getElementById('change').value = change.toFixed(2);   
 }
 
-function updateInventoryPrice(selectElement) {
-    var selectedUpdateOption = selectElement.options[selectElement.selectedIndex];
-    selectedUpdatePrice = parseFloat(selectedUpdateOption.getAttribute('data-price'));
-    document.getElementById('updatePrice').value = selectedUpdatePrice;
-    document.getElementById('updateChange').value = '';
+// For Update Modal
+price = 0;
+function getPriceImage(e){
+    // Get the selected option
+    let selectedOption = e.options[e.selectedIndex];
+    selectedUpdatePrice = parseFloat(selectedOption.getAttribute('data-price'));
+    price = document.getElementById('updatePrice').value = selectedUpdatePrice;
+    amount = document.getElementById('updateAmount').value;
+    document.getElementById('updateChange').value = price - amount;
+
+    let selectedUpdateImage = selectedOption.getAttribute('data-image');
+    document.getElementById('imageUpdatePreview').src = 'public/images/products/' + selectedUpdateImage;
 }
 
-function calculateUpdateChange() {
-    let amountUpdate = parseFloat(document.getElementById('updateAmount').value);
-    let changeUpdate = amountUpdate - selectedUpdatePrice;
-    document.getElementById('updateChange').value = changeUpdate.toFixed(2);
+function calculateUpdateChange(){
+    amount = document.getElementById('updateAmount').value;
+    document.getElementById('updateChange').value = price - amount;
 }
