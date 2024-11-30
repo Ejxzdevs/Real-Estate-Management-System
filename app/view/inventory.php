@@ -107,12 +107,18 @@ $csrf_token = CsrfHelper::generateToken();
                     </div>
                     <div class="mb-3">
                         <label for="property_id" class="form-label">Select Properties</label>
-                        <select class="form-select" name="property_id" id="property_id" onchange="updatePrice(this);" required>
+                        <select class="form-select" name="property_id" id="property_id" onchange="getPrice(this);" required>
                             <option value="" disabled selected>Select Property</option>
                             <?php foreach ($data as $product): ?>
-                                <option value="<?php echo $product['id'] ?>" data-price="<?php echo $product['price']; ?>"><?php echo $product['name'] ?></option>
+                                <option value="<?php echo $product['id'] ?>" 
+                                data-price="<?php echo $product['price']; ?>"
+                                data-image="<?php echo $product['image']; ?>"
+                                ><?php echo $product['name'] ?></option>
                             <?php endforeach; ?>
                         </select>
+                    </div>
+                    <div class="mb-3">
+                        <img id="imagePreview" src="" alt="Image Preview" style="display: none; max-width: 100%; height: auto;">
                     </div>
                     <div class="mb-3">
                         <label for="payment_method" class="form-label">Payment Method</label>
@@ -176,15 +182,19 @@ $csrf_token = CsrfHelper::generateToken();
                     </div>
                     <div class="mb-3">
                         <label for="property_id" class="form-label">Select Properties</label>
-                        <select class="form-select" name="property_id" id="updateProperty_id" onchange="updateInventoryPrice(this);" >
+                        <select class="form-select" name="property_id" id="updateProperty_id" onchange="getPriceImage(this);" >
                             <option value="" disabled selected>Select Property</option>
                             <?php foreach ($data as $product): ?>
-                                <option value="<?php echo $product['id'] ?>" data-price="<?php echo $product['price']; ?>"><?php echo $product['name'] ?></option>
+                                <option 
+                                value="<?php echo $product['id'] ?>" 
+                                data-price="<?php echo $product['price']; ?>" 
+                                data-image="<?php echo $product['image']; ?>"
+                                ><?php echo $product['name'] ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="mb-3">
-                        <img id="imageUpdatePreview" src="" alt="Image Preview" style="display: none; max-width: 100%; height: auto;">
+                        <img id="imageUpdatePreview" src="" alt="Image Preview" style="max-width: 100%; height: auto;">
                         <input type="hidden" name="prePropertyImage" class="form-control" id="updatePropertyImage" accept="image/*" >
                     </div>
                     <div class="mb-3">
@@ -221,4 +231,6 @@ $csrf_token = CsrfHelper::generateToken();
         </div>
     </div>
 </div>
+
+
 
