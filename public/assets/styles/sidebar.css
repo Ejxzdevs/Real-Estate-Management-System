@@ -5,7 +5,7 @@
   border-right: #E5E6E6 solid 1px;
 }
 .navContainer .logo {
-  height: 10%;
+  height: 15%;
   display: flex;
   align-items: center;
   padding-left: 2rem;
@@ -29,7 +29,7 @@
   font-style: normal;
 }
 .navContainer .menu {
-  height: 90%;
+  height: 85%;
   padding: 1rem 0;
 }
 .navContainer .menu h5 {
@@ -46,7 +46,7 @@
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
-  padding-left: 2rem;
+  padding-left: 2.3rem;
 }
 .navContainer .menu ul li:hover {
   background-color: #00695D;

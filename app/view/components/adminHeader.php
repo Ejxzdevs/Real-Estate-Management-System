@@ -3,6 +3,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         height: 100%;
+        background-color: #FFFFFF;
     }
     .righHeaderContainer{
         display: flex;

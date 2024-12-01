@@ -26,7 +26,7 @@
         <aside style="width: 20%;" >
                 <?php require_once 'app/view/components/sidebar.php' ?>
         </aside>
-        <main class="mainContainer" style="width: 80%;"> 
+        <main class="mainContainer" style="width: 80%; background-color: #F3F5F9;"> 
             <header class="admin-header">
                 <?php require_once 'app/view/components/adminHeader.php' ?>
             </header>
