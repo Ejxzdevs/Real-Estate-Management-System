@@ -43,7 +43,7 @@ require_once '../http/helper/csrfHelper.php';
     <div class="h-100 d-flex justify-content-center align-items-center">
             <form action="../http/controller/regularRegisterController.php" method="post" class="border border-radius custom-form rounded-3 ">
                 <div class="d-flex flex-column justify-content-center" style="height:20%">
-                   <h1 class="text-center fw-bold text-white fs-3">Register</h1>
+                   <h1 class="text-center fw-bold text-white fs-3">User Register</h1>
                 </div>
                 <div class="d-flex flex-column justify-content-center" style="height:20%">
                     <input type="hidden" name="csrf_token" value="<?php echo CsrfHelper::generateToken(); ?>">
