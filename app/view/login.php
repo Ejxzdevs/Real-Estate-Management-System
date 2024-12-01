@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>User Login</title>
     <link rel="stylesheet" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
 </head>
     <style>
@@ -35,25 +35,28 @@
             backdrop-filter: blur(5px);
             padding: 2rem;
             z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
     </style>
 <body>
     <div class="h-100 d-flex justify-content-center align-items-center">
-            <form action="../http/controller/userLoginController.php" method="post" class="border border-radius custom-form rounded-3 ">
+            <form action="../http/controller/userLoginController.php" method="post" class="border custom-form rounded ">
                 <div class="h-25 d-flex flex-column justify-content-center">
-                   <h1 class="text-center fw-bold text-white">Login</h1>
+                   <h1 class="text-center fw-bold text-white fs-3">User Login</h1>
                 </div>
                 <div class="h-25 d-flex flex-column justify-content-center   ">
                     <input type="hidden" name="csrf_token" value="<?php echo CsrfHelper::generateToken(); ?>">
                     <label class="form-label fw-medium text-white">Username</label>
-                    <input type="name" name="username" class="form-control" placeholder="Enter your Username">
-                </div>
-                <div class="h-25 d-flex flex-column justify-content-center   ">
-                    <label class="form-label fw-medium text-white">Password</label>
-                    <input type="password" name="password" class="form-control" placeholder="Enter your password">
+                    <input type="name" name="username" class="form-control" placeholder="Username:">
                 </div>
                 <div class="h-25 d-flex flex-column justify-content-center">
-                    <button class="btn btn-dark ">Submit</button>
+                    <label class="form-label fw-medium text-white">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Password:">
+                </div>
+                <div class="h-25 d-flex flex-column justify-content-center">
+                    <button class="btn btn-dark fw-bold wider" style="letter-spacing: 5px;">SUBMIT</button>
                 </div>
             </form>
     </div>

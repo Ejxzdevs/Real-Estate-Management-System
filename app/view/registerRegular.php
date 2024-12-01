@@ -29,34 +29,37 @@ require_once '../http/helper/csrfHelper.php';
 
         }
         .custom-form{
-            height: 420px;
+            height: auto;
             width: 420px;
             backdrop-filter: blur(5px);
             padding: 2rem;
             z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
     </style>
 <body>
     <div class="h-100 d-flex justify-content-center align-items-center">
             <form action="../http/controller/regularRegisterController.php" method="post" class="border border-radius custom-form rounded-3 ">
                 <div class="d-flex flex-column justify-content-center" style="height:20%">
-                   <h1 class="text-center fw-bold text-white">Register</h1>
+                   <h1 class="text-center fw-bold text-white fs-3">Register</h1>
                 </div>
                 <div class="d-flex flex-column justify-content-center" style="height:20%">
                     <input type="hidden" name="csrf_token" value="<?php echo CsrfHelper::generateToken(); ?>">
                     <label class="form-label fw-medium text-white">Username</label>
-                    <input type="name" name="username" class="form-control" placeholder="Enter your Username" required>
+                    <input type="name" name="username" class="form-control" placeholder="Username:" required>
                 </div>
                 <div class="d-flex flex-column justify-content-center" style="height:20%">
                     <label class="form-label fw-medium text-white">Password</label>
-                    <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
+                    <input type="password" name="password" class="form-control" placeholder="Password:" required>
                 </div>
                 <div class="d-flex flex-column justify-content-center" style="height:20%">
                     <label class="form-label fw-medium text-white">Retype Password</label>
-                    <input type="password" name="rePassword" class="form-control" placeholder="Retype your password" required>
+                    <input type="password" name="rePassword" class="form-control" placeholder="Re-Password:" required>
                 </div>
                 <div class="d-flex flex-column justify-content-center" style="height:20%">
-                    <button name="submit" class="btn btn-dark ">Submit</button>
+                    <button name="submit" class="btn btn-dark fw-bold" style="letter-spacing: 5px;">SUBMIT</button>
                 </div>
             </form>
     </div>
