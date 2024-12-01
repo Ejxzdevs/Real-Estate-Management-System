@@ -27,11 +27,11 @@ $num_inquiry = $total_inquiries->getTotalInquiries();
     <div class="container-fluid mt-4" >
         <h3 class="fw-semibold font-serif fs-4 ">Dashboard</h3>
     </div>
+
     <!-- First row -->
-     
-    <div class="container-fluid d-flex flex-row justify-content-around" style="cursor: pointer;"  >
+    <div class="container-fluid d-flex flex-row justify-content-around" style="cursor: pointer; "  >
         <!-- each div -->
-        <a href="admin.php?route=product" class="text-decoration-none text-black border my-4 rounded-1 shadow d-flex flex-col pt-3" style="width: 220px; height: 100px; " >
+        <a href="admin.php?route=product" class="text-decoration-none text-black border my-4 rounded-1 shadow d-flex flex-col pt-3" style="width: 220px; height: 100px; background-color: #FFFFFF;" >
             <div class="d-flex flex-column ps-3" style="width:65%;">
                 <p class="text-secondary p-0 m-0 fs-6" >House For Sale</p>
                 <p class="p-0 m-0 fw-bolder fs-2" ><?php echo $total[0]['Total_Sell'] ?></p>
@@ -41,7 +41,7 @@ $num_inquiry = $total_inquiries->getTotalInquiries();
             </div>
         </a>
 
-        <a href="admin.php?route=product" class="text-decoration-none text-black border my-4 rounded-1 shadow d-flex flex-col pt-3" style="width: 220px; height: 100px; " >
+        <a href="admin.php?route=product" class="text-decoration-none text-black border my-4 rounded-1 shadow d-flex flex-col pt-3" style="width: 220px; height: 100px; background-color: #FFFFFF;" >
             <div class="d-flex flex-column ps-3" style="width:65%;">
                 <p class="text-secondary p-0 m-0 fs-6" >House For Rent</p>
                 <p class="p-0 m-0 fw-bolder fs-2" ><?php echo $total[0]['Total_Rent'] ?></p>
@@ -51,7 +51,7 @@ $num_inquiry = $total_inquiries->getTotalInquiries();
             </div>
         </a>
 
-        <a href="admin.php?route=inventory" class="text-decoration-none text-black border my-4 rounded-1 shadow d-flex flex-col pt-3" style="width: 220px; height: 100px; " >
+        <a href="admin.php?route=inventory" class="text-decoration-none text-black border my-4 rounded-1 shadow d-flex flex-col pt-3" style="width: 220px; height: 100px; background-color: #FFFFFF;" >
             <div class="d-flex flex-column ps-3" style="width:65%;">
                 <p class="text-secondary p-0 m-0 fs-6" >Total Sales</p>
                 <p class="p-0 m-0 fw-bolder fs-2" ><?php echo $totalSales[0]['Total_Sales']; ?></p>
@@ -61,7 +61,7 @@ $num_inquiry = $total_inquiries->getTotalInquiries();
             </div>
         </a>
 
-        <a href="admin.php?route=inquiry" class="text-decoration-none text-black border my-4 rounded-1 shadow d-flex flex-col pt-3" style="width: 220px; height: 100px; " >
+        <a href="admin.php?route=inquiry" class="text-decoration-none text-black border my-4 rounded-1 shadow d-flex flex-col pt-3" style="width: 220px; height: 100px; background-color: #FFFFFF;" >
             <div class="d-flex flex-column ps-3" style="width:65%;">
                 <p class="text-secondary p-0 m-0 fs-6" >Total Inquiries</p>
                 <p class="p-0 m-0 fw-bolder fs-2" ><?php echo $num_inquiry[0]['total_inquiries']; ?></p>
@@ -75,10 +75,10 @@ $num_inquiry = $total_inquiries->getTotalInquiries();
     
     <!-- 2nd row -->
     <div class="container-fluid d-flex flex-col justify-content-around gap-2 p-3">
-        <div class="border" style="width: 650px"  >
+        <div class="border" style="width: 650px; background-color: #FFFFFF;"  >
             <canvas id="myChart"></canva>
         </div>
-        <div class="border px-3 overflow-y-auto" style="width: 300px; height: 330px; " >
+        <div class="border px-3 overflow-y-auto" style="width: 300px; height: 330px; background-color: #FFFFFF; " >
             <div class="d-flex align-items-center" style="height: 40px;" >
                 <p class="fw-medium fs-5 m-0 p-0" >Latest Sales</p>
             </div>
