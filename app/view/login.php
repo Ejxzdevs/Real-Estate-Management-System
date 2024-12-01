@@ -56,7 +56,7 @@
                     <input type="password" name="password" class="form-control" placeholder="Password:">
                 </div>
                 <div class="h-25 d-flex flex-column justify-content-center">
-                    <button class="btn btn-dark fw-bold wider" style="letter-spacing: 5px;">SUBMIT</button>
+                    <button class="btn btn-dark fw-bold" style="letter-spacing: 5px;">SUBMIT</button>
                 </div>
             </form>
     </div>
