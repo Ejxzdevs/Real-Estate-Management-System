@@ -9,7 +9,7 @@
         <div class="d-flex justify-content-center align-items-center flex-column gap-5 w-75 h-100 z-3">
             <h1 class="fw-bold text-white" > Welcome to Real Estate Management Solution</h1>
             <p class="text-white" >
-                In the fast-paced world of real estate, managing properties, clients, and transactions can be a complex task. [Your System's Name] is designed to simplify and streamline the process for real estate professionals. Whether you're managing residential or commercial properties, our system offers a user-friendly platform to oversee all aspects of real estate management, from property listings and client databases to contract management and financial tracking
+                In the fast-paced world of real estate, managing properties, clients, and transactions can be a complex task. REAL EASE System is designed to simplify and streamline the process for real estate professionals. Whether you're managing residential or commercial properties, our system offers a user-friendly platform to oversee all aspects of real estate management, from property listings and client databases to contract management and financial tracking
             </p>
         </div>
     </div>
