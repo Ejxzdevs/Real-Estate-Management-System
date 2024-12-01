@@ -11,7 +11,7 @@
             width: 3rem;
             border-radius: 5px;
             padding: 5px;"
-            ></i><span class="text-white fw-bolder mt-2" style="font-size: 1.2rem;" >REAL ESTATE</span></figcaption>
+            ></i><span class="text-white fw-bolder mt-2" style="font-size: 1.2rem;" >REAL EASE</span></figcaption>
     </figure>
     <nav class="navbar navbar-expand-lg w-100 w-lg-50">
         <button class="ms-3 navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,6 +1,6 @@
 <nav class="navContainer" >
     <div class="logo">
-        <i class="bi bi-houses"></i><span>REAL STATE</span>
+        <i class="bi bi-houses"></i><span>REAL EASE</span>
     </div>
     <div class="menu">
         
