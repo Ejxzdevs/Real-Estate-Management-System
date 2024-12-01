@@ -59,6 +59,43 @@ class DisplayInventory extends MySQL {
         }catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
             return false;
+        }
+    }
+
+    public function getMonthlyRevenue(){
+        try{
+         $stmt = parent::OpenConnection()->prepare("
+            SELECT 
+            months.month,
+            COALESCE(SUM(i.amount), 0) AS total_amount
+            FROM 
+                (SELECT 1 AS month UNION ALL 
+                SELECT 2 UNION ALL 
+                SELECT 3 UNION ALL 
+                SELECT 4 UNION ALL 
+                SELECT 5 UNION ALL 
+                SELECT 6 UNION ALL 
+                SELECT 7 UNION ALL 
+                SELECT 8 UNION ALL 
+                SELECT 9 UNION ALL 
+                SELECT 10 UNION ALL 
+                SELECT 11 UNION ALL 
+                SELECT 12) AS months
+            LEFT JOIN inventory i 
+            ON MONTH(i.date_added) = months.month 
+            AND YEAR(i.date_added) = 2024
+            AND i.date_added BETWEEN '2024-01-01' AND '2024-12-31'
+        GROUP BY 
+            months.month
+        ORDER BY 
+            months.month;
+         ");
+         $stmt->execute();
+         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        }catch(PDOException $e){
+            "Error" . $e->getMessage();
+            return false;
         }finally {
             parent::closeConnection();
         }
