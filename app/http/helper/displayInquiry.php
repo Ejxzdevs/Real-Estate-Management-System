@@ -15,4 +15,19 @@ class DisplayInquiries extends MySQL {
             parent::closeConnection();
         }
     }
+
+    public function getTotalInquiries(){
+        try{
+            $stmt = parent::OpenConnection()->prepare(
+                "SELECT COUNT(*) as total_inquiries from inquiries"
+            );
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }catch(PDOException $e){
+            echo "Error: " . $e->getMessage();
+            return false;
+        }finally{
+            parent::CloseConnection();
+        }
+    }
 }
