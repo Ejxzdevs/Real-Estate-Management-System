@@ -6,8 +6,14 @@ require_once 'app/http/helper/displayInquiry.php';
 // display 5 recent inventory
 $inventory = new DisplayInventory();
 $recentSales = $inventory->latestTransactions();
+
 // total sales
 $totalSales = $inventory->total_sales();
+
+// total revenue per month
+$months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+$revenue = $inventory->getMonthlyRevenue();
+
 
 // display total rent and sell
 $total_product = new DisplayProduct();
@@ -104,9 +110,9 @@ $num_inquiry = $total_inquiries->getTotalInquiries();
     </div>
 
     <!-- 3rd row -->
-     <div class="border" style="height: 700px;" >
+     <!-- <div class="border" style="height: 700px;" >
             <p>ww</p>
-     </div>
+     </div> -->
 
  
 </div>
@@ -114,17 +120,16 @@ $num_inquiry = $total_inquiries->getTotalInquiries();
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script>
   const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN' ,'JUL' , 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+      labels: <?php echo json_encode($months); ?>,
       datasets: [{
         label: 'Revenue',
-        data: [12, 19, 3, 5, 2, 3,3,15,3,52,12,3],
+        data: <?php echo json_encode(array_map(function($data) { return $data['total_amount']; }, $revenue)); ?>,
         borderWidth: 1
       }]
     },
