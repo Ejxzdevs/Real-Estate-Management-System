@@ -19,6 +19,9 @@
                 <i class="bi bi-box"></i><a href="?route=inventory">Inventory</a>
             </li>
             <li>
+                <i class="bi bi-newspaper"></i><a href="?route=news">News</a>
+            </li>
+            <li>
                 <i class="bi bi-file-earmark-text"></i><a href="" >Reports</a>
             </li>
             <li>
