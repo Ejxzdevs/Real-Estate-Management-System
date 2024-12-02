@@ -5,7 +5,7 @@ class DisplayNews extends MySQL {
 
     public function getAllNews() {
         try {
-            $stmt = parent::openConnection()->prepare("SELECT * FROM news ORDER BY id ASC");
+            $stmt = parent::openConnection()->prepare("SELECT * FROM news Where is_deleted = 0 ORDER BY id ASC");
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
