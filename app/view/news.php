@@ -16,6 +16,7 @@ $csrf_token = CsrfHelper::generateToken();
                 <tr>
                     <th>ID</th>
                     <th>title</th>
+                    <th>Content</th>
                     <th>Date Posted</th>
                     <th>Actions</th>
                 </tr>
@@ -26,18 +27,19 @@ $csrf_token = CsrfHelper::generateToken();
                         <td><img src="public/images/products/<?php echo htmlspecialchars($news['image']); ?>" alt="Product Image"></td>
                         <td><?php echo htmlspecialchars($news['news_title']); ?></td>
                         <td><?php echo htmlspecialchars($news['news_content']); ?></td>
+                        <td><?php echo date('F j, Y', strtotime($news['date_added'])); ?></td>
                         <td><div class="table-actions">
                         <a href="#" 
                                onclick="
-                                document.getElementById('updatePropertyID').value = '<?php echo htmlspecialchars($news['id']); ?>';
-                                document.getElementById('updatePropertyName').value = '<?php echo htmlspecialchars($news['news_title']); ?>';
-                                document.getElementById('updatePropertyDescription').value = '<?php echo htmlspecialchars($news['news_content']); ?>';
-                                document.getElementById('updatePropertyImage').value = '<?php echo htmlspecialchars($news['image']); ?>';
+                                document.getElementById('updateNewsID').value = '<?php echo htmlspecialchars($news['id']); ?>';
+                                document.getElementById('updateTitle').value = '<?php echo htmlspecialchars($news['news_title']); ?>';
+                                document.getElementById('updateContent').value = '<?php echo htmlspecialchars($news['news_content']); ?>';
+                                document.getElementById('preNewsImage').value = '<?php echo htmlspecialchars($news['image']); ?>';
                                 document.getElementById('imageUpdatePreview').src = 'public/images/products/<?php echo htmlspecialchars($news['image']); ?>';
                                 document.getElementById('imageUpdatePreview').style.display = 'block';
                                "
-                               data-bs-toggle="modal" data-bs-target="#updateProperty" class="edit" ><i class="bi bi-pencil-square"></i></a>
-                               <form action="app/http/controller/productController.php" method="POST" style="display: inline;">
+                               data-bs-toggle="modal" data-bs-target="#updateNews" class="edit" ><i class="bi bi-pencil-square"></i></a>
+                               <form action="app/http/controller/newsController.php" method="POST" style="display: inline;">
                                     <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
                                     <input type="hidden" name="delete">
                                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($news['id']); ?>">
@@ -54,7 +56,7 @@ $csrf_token = CsrfHelper::generateToken();
     </div>
 </div>
 
-<!-- Add Property Modal -->
+<!-- Add News Modal -->
 <div class="modal fade" id="addProperty" tabindex="-1" aria-labelledby="addProperty" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -91,65 +93,40 @@ $csrf_token = CsrfHelper::generateToken();
     </div>
 </div>
 
-<!-- Update Modal -->
-<div class="modal fade" id="updateProperty" tabindex="-1" aria-labelledby="updateProperty" aria-hidden="true">
+<!-- Update News Modal -->
+<div class="modal fade" id="updateNews" tabindex="-1" aria-labelledby="updateNews" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Update Property</h5>
+                <h5 class="modal-title">Update News</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="app/http/controller/productController.php" method="POST" id="updatePropertyForm" enctype="multipart/form-data">
+                <form action="app/http/controller/newsController.php" method="POST" id="updateNewsForm" enctype="multipart/form-data">
                     <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
                     <input type="hidden" name="update">
-                    <input type="hidden" name="id" class="form-control" id="updatePropertyID" required>
+                    <input type="text" name="id" class="form-control" id="updateNewsID" required>
                     <div class="mb-3">
-                        <label for="updatePropertyName" class="form-label">Property Name</label>
-                        <input type="text" name="propertyName" class="form-control" id="updatePropertyName" required>
+                        <label for="updateTitle" class="form-label">Title</label>
+                        <input type="text" name="title" class="form-control" id="updateTitle" required>
                     </div>
                     <div class="mb-3">
-                        <label for="updatePropertyDescription" class="form-label">Description</label>
-                        <textarea name="propertyDescription" class="form-control" id="updatePropertyDescription" rows="3" required></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="updatePropertyAddress" class="form-label">Address</label>
-                        <input type="text" name="propertyAddress" class="form-control" id="updatePropertyAddress" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="updatePropertyPrice" class="form-label">Price</label>
-                        <input type="text" name="propertyPrice" class="form-control" id="updatePropertyPrice" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="updatePropertyStatus" class="form-label">Status</label>
-                        <select class="form-select" name="propertyStatus" id="updatePropertyStatus" required>
-                            <option value="" disabled selected>Select status</option>
-                            <option value="available">Available</option>
-                            <option value="sold">Sold</option>
-                            <option value="pending">Pending</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="updateTransactionType" class="form-label">Transaction Type</label>
-                        <select class="form-select" name="transactionType" id="updateTransactionType" required>
-                            <option value="" disabled selected>Select status</option>
-                            <option value="sell">Sell</option>
-                            <option value="rent">Rent</option>
-                        </select>
+                        <label for="updateContent" class="form-label">Content</label>
+                        <textarea name="content" class="form-control" id="updateContent" rows="3" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Update Image</label>
-                        <input type="file" name="propertyImage" class="form-control" accept="image/*" onchange="previewImage(event)">
+                        <input type="file" name="newsImage" class="form-control" accept="image/*" onchange="previewUpdateImage(event)">
                     </div>
                     <div class="mb-3">
-                        <img id="imageUpdatePreview" src="" alt="Image Preview" style="display: none; max-width: 100%; height: auto;">
-                        <input type="hidden" name="prePropertyImage" class="form-control" id="updatePropertyImage" accept="image/*" >
+                        <img id="imageUpdatePreview" src="" alt="Image Preview" style="display: hidden; max-width: 100%; height: auto;">
+                        <input type="text" name="preNewsImage" id="preNewsImage" alt="">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" form="updatePropertyForm">Update Property</button>
+                <button type="submit" class="btn btn-primary" form="updateNewsForm">Update Property</button>
             </div>
         </div>
     </div>
