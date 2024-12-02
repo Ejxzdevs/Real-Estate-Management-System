@@ -25,14 +25,14 @@ class NewsController {
         if (!is_uploaded_file($tempFile) || getimagesize($tempFile) === false) {
             throw new Exception("Invalid file upload.");
         }
-        if ($file["propertyImage"]["size"] > 20000000) {
+        if ($file["newsImage"]["size"] > 20000000) {
             throw new Exception("File is too large.");
         }
         if (!in_array($imageFileType, ['jpg', 'png', 'jpeg', 'gif'])) {
             throw new Exception("Invalid file format.");
         }
         if (!move_uploaded_file($tempFile, $targetFile)) {
-            throw new Exception("Error uploading file. Error code: " . $file["propertyImage"]["error"]);
+            throw new Exception("Error uploading file. Error code: " . $file["newsImage"]["error"]);
         }
         
         return $imageName;
@@ -46,24 +46,25 @@ class NewsController {
                                         );
     }
 
-    public function updateProduct($data, $file) {
+    public function updateNews($data, $file) {
+        print_r($data);
+        print_r($file);
         $sanitizedData = $this->sanitizeInput($data);
-        $imageName = $sanitizedData['prePropertyImage'];
+        $imageName = $sanitizedData['preNewsImage'];
 
-        if ($file["propertyImage"]["tmp_name"]) {
+        if ($file["newsImage"]["tmp_name"]) {
             $imageName = $this->validateFile($file);
         }
 
-        return $this->model->updateProduct($sanitizedData['id'], $sanitizedData['propertyName'], 
-                                            $sanitizedData['propertyDescription'], $sanitizedData['propertyAddress'], 
-                                            $sanitizedData['propertyPrice'], $sanitizedData['propertyStatus'],
-                                            $sanitizedData['transactionType'],
-                                            $imageName);
+        return $this->model->modifiedNews($sanitizedData['id'],
+        $sanitizedData['title'], $sanitizedData['content'], 
+                                        $imageName);
+                                        
     }
 
-    public function deleteProduct($data) {
+    public function updateTodeleteNews($data) {
         $id = filter_var($data['id'] ?? '', FILTER_SANITIZE_NUMBER_INT);
-        return $this->model->deleteProduct($id);
+        return $this->model->deleteNews($id);
     }
 }
 
@@ -77,29 +78,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
     
     CsrfHelper::regenerateToken();
-    $productModel = new News();
-    $productController = new NewsController($productModel);
+    $news = new News();
+    $newsController = new NewsController($news);
 
     try {
         if (isset($_POST['insert'])) {
-            $result_status = $productController->createNews($_POST, $_FILES);
+            $result_status = $newsController->createNews($_POST, $_FILES);
             echo $result_status === 200 
                 ? "<script>alert('News Added')</script><script>window.location.href='../../../admin.php?route=news'</script>"
-                : "<script>alert('Failed to insert property')</script>";
+                : "<script>alert('Failed to insert News')</script>";
         }
 
         if (isset($_POST['update'])) {
-            $result_status = $productController->updateProduct($_POST, $_FILES);
+            $result_status = $newsController->updateNews($_POST, $_FILES);
             echo $result_status === 200 
-                ? "<script>alert('Product successfully updated')</script><script>window.location.href='../../../admin.php?route=product'</script>"
-                : "<script>alert('Failed to update property')</script>";
+                ? "<script>alert('News successfully updated')</script><script>window.location.href='../../../admin.php?route=news'</script>"
+                : "<script>alert('Failed to update News')</script>";
         }
 
         if (isset($_POST['delete'])) {
-            $result_status = $productController->deleteProduct($_POST);
+            $result_status = $newsController->updateTodeleteNews($_POST);
             echo $result_status === 200 
-                ? "<script>alert('Product successfully deleted')</script><script>window.location.href='../../../admin.php?route=product'</script>"
-                : "<script>alert('Failed to delete property')</script>";
+                ? "<script>alert('News successfully deleted')</script><script>window.location.href='../../../admin.php?route=news'</script>"
+                : "<script>alert('Failed to delete News')</script>";
         }
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();

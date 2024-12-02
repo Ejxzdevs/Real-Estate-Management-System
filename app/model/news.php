@@ -19,17 +19,13 @@ class News extends MySQL {
         }
     }
 
-    public function updateProduct($id, $name, $description, $address, $price, $status,$type ,$image) {
+    public function modifiedNews($id, $title, $content, $image) {
         try {
-            $stmt = parent::openConnection()->prepare("UPDATE properties SET name = :name, description = :description, address = :address, price = :price, status = :status, transaction_type = :type , image = :image WHERE id = :id");
+            $stmt = parent::openConnection()->prepare("UPDATE news SET news_title = :title, news_content = :content ,image = :image WHERE id = :id");
 
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-            $stmt->bindParam(':name', $name);
-            $stmt->bindParam(':description', $description);
-            $stmt->bindParam(':address', $address);
-            $stmt->bindParam(':price', $price);
-            $stmt->bindParam(':status', $status);
-            $stmt->bindParam(':type', $type);
+            $stmt->bindParam(':title', $title);
+            $stmt->bindParam(':content', $content);
             $stmt->bindParam(':image', $image);
             $stmt->execute();
             return 200;
@@ -41,9 +37,9 @@ class News extends MySQL {
         }
     }
 
-    public function deleteProduct($id) {
+    public function deleteNews($id) {
         try {
-            $stmt = parent::openConnection()->prepare("UPDATE properties SET is_deleted = 1 WHERE id = :id");
+            $stmt = parent::openConnection()->prepare("UPDATE news SET is_deleted = 1 WHERE id = :id");
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
             return 200;
