@@ -105,7 +105,6 @@ $csrf_token = CsrfHelper::generateToken();
                     </div>
                     <div class="mb-3">
                         <img id="imagePreview" src="" alt="Image Preview" style="display: none; max-width: 100%; height: auto;">
-                        <input type="hidden" name="prePropertyImage" class="form-control" id="updatePropertyImage" accept="image/*" >
                     </div>
                 </form>
             </div>
@@ -165,7 +164,7 @@ $csrf_token = CsrfHelper::generateToken();
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Update Image</label>
-                        <input type="file" name="propertyImage" class="form-control" accept="image/*" onchange="previewImage(event)">
+                        <input type="file" name="propertyImage" class="form-control" accept="image/*" onchange="previewUpdateImage(event)">
                     </div>
                     <div class="mb-3">
                         <img id="imageUpdatePreview" src="" alt="Image Preview" style="display: none; max-width: 100%; height: auto;">
