@@ -7,5 +7,6 @@ return [
     'properties' => 'properties.php',
     'inquiry' => 'inquiry.php',
     'inventory' => 'inventory.php',
+    'news' => 'news.php'
 ];
 
