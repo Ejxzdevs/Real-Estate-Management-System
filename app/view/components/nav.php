@@ -26,7 +26,7 @@
                     <a class="nav-link text-light " href="?route=properties">Properties</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light " href="#">News</a>
+                    <a class="nav-link text-light " href="?route=headlines">News</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light " href="#" tabindex="-1" aria-disabled="true">About</a>
