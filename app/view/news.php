@@ -105,7 +105,7 @@ $csrf_token = CsrfHelper::generateToken();
                 <form action="app/http/controller/newsController.php" method="POST" id="updateNewsForm" enctype="multipart/form-data">
                     <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
                     <input type="hidden" name="update">
-                    <input type="text" name="id" class="form-control" id="updateNewsID" required>
+                    <input type="hidden" name="id" class="form-control" id="updateNewsID" required>
                     <div class="mb-3">
                         <label for="updateTitle" class="form-label">Title</label>
                         <input type="text" name="title" class="form-control" id="updateTitle" required>
@@ -120,7 +120,7 @@ $csrf_token = CsrfHelper::generateToken();
                     </div>
                     <div class="mb-3">
                         <img id="imageUpdatePreview" src="" alt="Image Preview" style="display: hidden; max-width: 100%; height: auto;">
-                        <input type="text" name="preNewsImage" id="preNewsImage" alt="">
+                        <input type="hidden" name="preNewsImage" id="preNewsImage" alt="">
                     </div>
                 </form>
             </div>
