@@ -4,21 +4,20 @@ The real estate industry is a vital sector that involves the buying, selling, an
 
 ![Logo](RealEstateSample.png)
 
-## Features
+## Features 📌
  - Home Page
-    - Introduction Section(Brief overview of the platform)
-    - Benefit Section(Highlights the advantages of using the platform.)
-    - Latest Properties(Showcases the most recent property listings)
-    - Expert Section(Features industry experts offering advice or services.)
+    - Introduction Section: Brief overview of the platform
+    - Benefit Section: Highlights the advantages of using the platform
+    - Latest Properties: Showcases the most recent property listings
+    - Expert Section: Features industry experts offering advice or services
  - Propeties Page
-    - Filter(Search and filter properties based on various criteria (e.g., location, price, type).)
-    - View Details(Detailed view of individual property listings.)
-    - Inquire(Option to inquire or contact about a specific property.
-)
+    - Filter: Search and filter properties based on various criteria (e.g. price, type)
+    - View Details: Detailed view of individual property listings
+    - Inquire: Option to inquire or contact about a specific property
  - News Page
-    - News Lists
+    - News Lists: Displays real estate-related news and updates.
  - About Page
-    - About Us Information
+    - About Us Information: Information about the company, mission, and values.
  - Admin
     - Dashboard
         - total house sale
@@ -28,16 +27,16 @@ The real estate industry is a vital sector that involves the buying, selling, an
         - Latest Sales
         - Revenue Graph
     - Property
-        - CRUD
+        - Create, read, update, and delete (CRUD) property listings
     - Inquiries
-        - View
+        - View and manage property inquiries.
     - Inventory
-        - CRUD
+        - Add, update, or remove inventory.
     - News
-        - CRUD
+        - Add, update, or remove real estate news.
  - Login/Logout
 
- ## Tech Stack
+ ## Tech Stack 📌
  - Frontend: HTML, CSS, Bootstrap
  - Backend: PHP
  - Database: MySQL
