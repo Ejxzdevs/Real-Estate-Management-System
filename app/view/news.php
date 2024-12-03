@@ -7,7 +7,7 @@ $csrf_token = CsrfHelper::generateToken();
 ?>
 <div class="d-flex flex-column p-4">
     <div class="d-flex flex-row justify-content-between w-100 h-100 mb-2">
-        <h5 class="mt-3">News</h5>
+        <h3 class="mt-3">News</h3>
         <button class="btn btn-primary me-3" style="width: 120px; height: 2.5rem;" data-bs-toggle="modal" data-bs-target="#addProperty">ADD</button>
     </div>
     <div class="table-container">
@@ -15,6 +15,7 @@ $csrf_token = CsrfHelper::generateToken();
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Image</th>
                     <th>title</th>
                     <th>Date Posted</th>
                     <th>Actions</th>
@@ -23,6 +24,7 @@ $csrf_token = CsrfHelper::generateToken();
             <tbody>
                 <?php foreach ($data as $news): ?>
                     <tr>
+                    <td><?php echo htmlspecialchars($news['id']); ?></td>
                         <td><img src="public/images/products/<?php echo htmlspecialchars($news['image']); ?>" alt="Product Image"></td>
                         <td><?php echo htmlspecialchars($news['news_title']); ?></td>
                         <td><?php echo date('F j, Y', strtotime($news['date_added'])); ?></td>
