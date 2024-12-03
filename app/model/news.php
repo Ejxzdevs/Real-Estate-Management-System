@@ -39,7 +39,7 @@ class News extends MySQL {
 
     public function deleteNews($id) {
         try {
-            $stmt = parent::openConnection()->prepare("UPDATE news SET is_deleted = 1 WHERE id = :id");
+            $stmt = parent::openConnection()->prepare("UPDATE news SET is_deleted = 0 WHERE id = :id");
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
             return 200;
