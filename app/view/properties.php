@@ -54,7 +54,7 @@ if (isset($_SESSION['products'])) {
     </div>
     <div class="productDisplay" >
         <div class="propertiesLabelContainer " >
-            <h1>Properties Listing</h1>
+            <h1>Properties</h1>
         </div>
         <div class="productContainer" >
             <?php foreach($products as $product): ?>
