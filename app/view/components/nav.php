@@ -29,7 +29,7 @@
                     <a class="nav-link text-light " href="?route=headlines">News</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light " href="#" tabindex="-1" aria-disabled="true">About</a>
+                    <a class="nav-link text-light " href="?route=about" tabindex="-1" aria-disabled="true">About</a>
                 </li>
             </ul>
         </div>
