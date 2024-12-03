@@ -8,17 +8,18 @@ $data = $news->getAllNews();
 
 <div class="container-fluid py-5 m-0" style="height: auto;" >
     <div class="d-flex flex-row" style="height:100px;">
-        <div class="d-flex align-items-center ps-4 " style="width:30%;">
-            <h1>News</h1>
-        </div>
-        <div class="d-flex align-items-center" style="width:70%;">
+     
+        <div class="d-flex align-items-center justify-content-center" style="width:100%;">
             <div class="input-group" style="width:450px">
-                <input type="text" class="form-control" placeholder="Search..." aria-label="Search">
+                <input type="text" class="form-control border" placeholder="Search..." aria-label="Search">
                 <button class="btn btn-outline-secondary" type="button"><i class="bi bi-search"></i></button>
             </div>
         </div>
     </div>
-    <div class="container-fluid d-flex flex-wrap gap-2 p-0 m-0 " style="height:auto;" >
+    <div class="container-fluid d-flex flex-wrap gap-2 py-4 m-0 " style="height:auto;" >
+        <div class="d-flex align-items-center " style="width:100%;">
+            <h3 class="fw-medium">News</h3>
+        </div>
         <?php foreach($data as $news): ?>
                 <div class="card border d-flex flex-row p-0 shadow " style="height: 200px; width: 600px; cursor: pointer; " >
                     <div class="border p-1 d-flex justify-content-center align-items-center" style="width: 50%;" >
