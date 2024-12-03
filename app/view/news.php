@@ -16,7 +16,6 @@ $csrf_token = CsrfHelper::generateToken();
                 <tr>
                     <th>ID</th>
                     <th>title</th>
-                    <th>Content</th>
                     <th>Date Posted</th>
                     <th>Actions</th>
                 </tr>
@@ -26,7 +25,6 @@ $csrf_token = CsrfHelper::generateToken();
                     <tr>
                         <td><img src="public/images/products/<?php echo htmlspecialchars($news['image']); ?>" alt="Product Image"></td>
                         <td><?php echo htmlspecialchars($news['news_title']); ?></td>
-                        <td><?php echo htmlspecialchars($news['news_content']); ?></td>
                         <td><?php echo date('F j, Y', strtotime($news['date_added'])); ?></td>
                         <td><div class="table-actions">
                         <a href="#" 
