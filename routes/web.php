@@ -8,6 +8,7 @@ return [
     'inquiry' => 'inquiry.php',
     'inventory' => 'inventory.php',
     'news' => 'news.php',
-    'headlines' => 'headlines.php'
+    'headlines' => 'headlines.php',
+    'about' => 'about.php'
 ];
 
