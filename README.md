@@ -31,7 +31,7 @@ The real estate industry is a vital sector that involves the buying, selling, an
     - Inquiries
         - View and manage property inquiries.
     - Inventory
-        - Create, read, update, and delete (CRUD) invenotry.
+        - Create, read, update, and delete (CRUD) inventory.
     - News
         - Create, read, update, and delete (CRUD) news.
  - Login/Logout
