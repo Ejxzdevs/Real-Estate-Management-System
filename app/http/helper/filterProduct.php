@@ -5,56 +5,46 @@ class DisplayProduct extends MySQL {
     public function getFilteredProducts($filters) {
         try {
             $sql = "SELECT * FROM properties WHERE is_deleted = 0";
-            $conditions = [];
-            $params = [];
-
-            // Filter by property name (partial match)
-            if (!empty($filters['propertyName'])) {
-                $conditions[] = "name LIKE :propertyName";
-                $params[':propertyName'] = "%" . $filters['propertyName'] . "%";
-            }
-
-            // Filter by property address (partial match)
-            if (!empty($filters['propertyAddress'])) {
-                $conditions[] = "address LIKE :propertyAddress";
-                $params[':propertyAddress'] = "%" . $filters['propertyAddress'] . "%";
-            }
-
-            // Filter by price (ensure it's numeric and use '<=' comparison)
-            if (!empty($filters['propertyPrice']) && is_numeric($filters['propertyPrice'])) {
-                $conditions[] = "price >= :propertyPrice";
-                $params[':propertyPrice'] = $filters['propertyPrice'];
-            }
-
-            // Filter by property status
+            
+            // Conditionally add filters if provided
             if (!empty($filters['propertyStatus'])) {
-                $conditions[] = "status = :propertyStatus";
-                $params[':propertyStatus'] = $filters['propertyStatus'];
+                $sql .= " AND status = :propertyStatus";
             }
-
-            // Filter by transaction type
             if (!empty($filters['propertyTransactionType'])) {
-                $conditions[] = "transaction_type = :propertyTransactionType";
-                $params[':propertyTransactionType'] = $filters['propertyTransactionType'];
+                $sql .= " AND transaction_type = :propertyTransactionType";
             }
-
-            // If any filter conditions were added, append them to the SQL query
-            if (count($conditions) > 0) {
-                $sql .= " AND " . implode(" AND ", $conditions);
+            if (!empty($filters['propertyName'])) {
+                $sql .= " AND name LIKE :propertyName";
             }
-
+            if (!empty($filters['propertyPrice'])) {
+                $sql .= " AND price >= :propertyPrice";
+            }
+            if (!empty($filters['propertyAddress'])) {
+                $sql .= " AND address LIKE :propertyAddress";
+            }
+            
             // Prepare the SQL statement
             $stmt = parent::openConnection()->prepare($sql);
 
-            // Bind parameters to the prepared statement
-            foreach ($params as $key => $value) {
-                $stmt->bindParam($key, $value, PDO::PARAM_STR);
+            // Bind parameters to avoid SQL injection
+            if (!empty($filters['propertyStatus'])) {
+                $stmt->bindParam(':propertyStatus', $filters['propertyStatus'], PDO::PARAM_STR);
+            }
+            if (!empty($filters['propertyTransactionType'])) {
+                $stmt->bindParam(':propertyTransactionType', $filters['propertyTransactionType'], PDO::PARAM_STR);
+            }
+            if (!empty($filters['propertyName'])) {
+                $stmt->bindValue(':propertyName', '%' . $filters['propertyName'] . '%', PDO::PARAM_STR);
+            }
+            if (!empty($filters['propertyPrice'])) {
+                $stmt->bindParam(':propertyPrice', $filters['propertyPrice'], PDO::PARAM_INT);
+            }
+            if (!empty($filters['propertyAddress'])) {
+                $stmt->bindValue(':propertyAddress', '%' . $filters['propertyAddress'] . '%', PDO::PARAM_STR);
             }
 
             // Execute the statement
             $stmt->execute();
-
-            // Fetch and return the results
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         } catch (PDOException $e) {
@@ -62,7 +52,6 @@ class DisplayProduct extends MySQL {
             header('Content-Type: application/json');
             echo json_encode(['error' => "Error: " . $e->getMessage()]);
         } finally {
-            // Ensure the database connection is closed
             parent::closeConnection();
         }
     }
@@ -71,18 +60,18 @@ class DisplayProduct extends MySQL {
 session_start();
 
 if (isset($_POST['filter'])) {
-    // Create an instance of the DisplayProduct class
+
     $getproducts = new DisplayProduct();
     
     // Capture the filter values from the POST request
     $filters = [
-        'propertyName' => $_POST['propertyName'] ?? '',
-        'propertyAddress' => $_POST['propertyAddress'] ?? '',
-        'propertyPrice' => $_POST['propertyPrice'] ?? '',
-        'propertyStatus' => $_POST['propertyStatus'] ?? '',
-        'propertyTransactionType' => $_POST['propertyTransactionType'] ?? ''
+        'propertyName' => isset($_POST['propertyName']) ? trim($_POST['propertyName']) : '',
+        'propertyAddress' => isset($_POST['propertyAddress']) ? trim($_POST['propertyAddress']) : '',
+        'propertyPrice' => isset($_POST['propertyPrice']) && is_numeric($_POST['propertyPrice']) ? (int) $_POST['propertyPrice'] : 0,
+        'propertyStatus' => isset($_POST['propertyStatus']) ? trim($_POST['propertyStatus']) : '',
+        'propertyTransactionType' => isset($_POST['propertyTransactionType']) ? trim($_POST['propertyTransactionType']) : ''
     ];
-    
+
     // Store the filters in the session
     $_SESSION['filter'] = $filters;
 
@@ -91,9 +80,7 @@ if (isset($_POST['filter'])) {
 
     // Store the filtered products in the session
     $_SESSION['products'] = $products;
-    
-    // Redirect to properties page
+
     header("Location: ../../../index.php?route=properties");
     exit();
 }
-
