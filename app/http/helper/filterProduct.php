@@ -22,7 +22,7 @@ class DisplayProduct extends MySQL {
 
             // Filter by price (ensure it's numeric and use '<=' comparison)
             if (!empty($filters['propertyPrice']) && is_numeric($filters['propertyPrice'])) {
-                $conditions[] = "price <= :propertyPrice";
+                $conditions[] = "price >= :propertyPrice";
                 $params[':propertyPrice'] = $filters['propertyPrice'];
             }
 
