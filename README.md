@@ -37,6 +37,6 @@ The real estate industry is a vital sector that involves the buying, selling, an
  - Login/Logout
 
  ## Tech Stack 📌
- - Frontend: HTML, CSS, Bootstrap
+ - Frontend: HTML, CSS, JS & Bootstrap
  - Backend: PHP
  - Database: MySQL
